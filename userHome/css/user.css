@@ -1,0 +1,193 @@
+body {
+	margin: 0;
+	padding:0;
+	font-size: 16px;
+	font-family: "Arial","Hiragino Sans GB", "Helvetica", "sans-serif";
+	min-width: 1080px;
+	background: rgb(246,246,246);
+	/*滚动条样式*/
+	scrollbar-arrow-color: gray; /*上下按钮上三角箭头的颜色*/
+	scrollbar-face-color: #CBCBCB; /*滚动条凸出部分的颜色*/
+	scrollbar-3dlight-color: #CBCBCB; /*滚动条亮边的颜色*/
+	scrollbar-highlight-color: #333; /*滚动条空白部分的颜色*/
+	scrollbar-shadow-color: #CBCBCB; /*滚动条阴影的颜色*/
+	scrollbar-darkshadow-color: gray; /*滚动条强阴影的颜色*/
+	scrollbar-track-color: #CBCBCB; /*滚动条背景颜色*/
+	scroll-behavior:smooth;
+	scrollbar-base-color: #a5a5a5; /*滚动条的基本颜色*/
+	Cursor:url(mouse.cur); /*自定义个性鼠标*/
+	/*以上2项适用与：body、div、textarea、iframe*/
+	z-index: 0;
+}
+
+
+::-webkit-scrollbar {  /* 滚动条整体部分 */
+	width:5px;
+	margin-right:2px;
+	z-index: 0;
+}
+::-webkit-scrollbar :hover {  /* 滚动条整体部分 */
+	width:0px;
+	margin-right:2px;
+}
+::-webkit-scrollbar-button { /* 滚动条两端的按钮 */
+	width:1px;
+	height: 0px;
+/*	background-color: yellow;*/
+}
+::-webkit-scrollbar:horizontal {/* 滚动条整体部分 */
+	height:5px;
+	margin-bottom:2px
+}
+::-webkit-scrollbar-track {  /* 外层轨道 */
+	border-radius: 10px;
+}
+::-webkit-scrollbar-track-piece {  /*内层轨道，滚动条中间部分，也就是滚动条的背后 */
+	background-color: rgb(221,221,221);
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {  /* 滑块 */
+	width:5px;
+	border-radius: 5px;
+	background: rgb(177,177,177);
+}
+::-webkit-scrollbar-corner { /* 边角 */
+	width: 5px;
+	background-color: gray;
+}
+::-webkit-scrollbar-thumb:hover { /* 鼠标移入滑块 */
+	background: #909090;
+}
+
+
+#page-wrapper {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;	
+}
+
+
+
+/*页眉*/
+header {
+	display: block;
+	position: absolute; 
+	height: 100px;
+	width: 100%;
+	min-width: 1080px;	
+	z-index: 101;
+}
+
+.head-container {
+	display: flex;
+	width:100%;
+	min-width: 1075px;	
+	align-items:center;
+	height: 73px;
+	font-size: 16px;
+	background: white;
+	box-shadow: 0 2px 14px 0 rgba(28,31,33,.2); 
+	z-index: 101;
+}
+/*页面logo*/
+.head-item-logo {
+	width: 200px;
+	margin-left: 5%;
+}
+/*搜索框*/
+.head-item-search {
+	display: flex;
+	justify-content: flex-end;
+	flex-grow: 1;
+}
+.head-item-search input {
+	width: 200px; 
+	height: 30px; 
+	background: url(../../logo/search.png) no-repeat 95%;
+}
+/*导航*/
+.head-item-nav ul {
+	margin: 0 20px 0 0;
+	list-style: none;
+}
+/*导航1*/
+.head-item-nav ul li {
+	display: inline;
+	width: 100px;
+}
+/*导航1-1功能项*/
+.nav-left ul li {
+	padding: 0 20px;
+}
+/*导航1-2登陆*/
+.nav-right ul li {
+	padding: 0 5px;
+	cursor: pointer; 
+}
+
+.nav-left ul li a {
+	text-decoration: none;
+	color: black;
+}
+/*登录弹框按钮*/
+#popLoginBox {
+	background: #027e89; 
+	line-height: 20px; 
+	color: white; 
+	padding: 6px 17px; 
+	font-size: 15px;
+}
+/*注册弹框按钮*/
+#popRegisterBox {
+	font-size: 15px; 
+	color: #a3a7a7
+}
+
+
+
+
+
+
+
+
+
+#feature {
+	width: 20%;	
+	display: flex;
+	flex-direction: column;
+	background: rgb(48,51,54);
+	color: white;	
+}
+
+
+#user-info {
+	height:20%;
+	float: right;
+	background: rgb(0,104,113);
+}
+#time {
+	font-size: 25px;
+	text-align: center;
+	margin: 8px 0 4px 0;
+}
+#date {
+	font-size: 15px;
+	text-align: center;
+	margin: 4px 0;
+}
+
+
+#feature-item {
+	height:80%;
+	float: right;
+}
+
+
+#feature-item-info {
+	width: 80%;
+	height:100%;
+	margin: 0 auto;
+	padding: 0 200px;
+}
+

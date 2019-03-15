@@ -1,0 +1,223 @@
+body {
+	margin: 0;
+	padding:0;
+	font-size: 16px;
+	font-family: "Arial","Hiragino Sans GB", "Helvetica", "sans-serif";
+	min-width: 1080px;
+	background: rgb(248,250,252);
+}
+
+::-webkit-scrollbar{width:0px}
+
+#box {
+	height: 900px;
+
+}
+
+header {
+	display: block;
+	height: 100px;
+}
+
+/*页眉*/
+.head-container {
+	display: flex;
+	width:100%;
+	min-width: 1075px;	
+	align-items:center;
+	height: 73px;
+	font-size: 16px;
+	box-shadow: 0 2px 14px 0 rgba(28,31,33,.2); 
+}
+/*页面logo*/
+.head-item-logo {
+	width: 200px;
+	margin-left: 5%;
+}
+/*搜索框*/
+.head-item-search {
+	display: flex;
+	justify-content: flex-end;
+	flex-grow: 1;
+}
+.head-item-search input {
+	width: 200px; 
+	height: 30px; 
+	background: url(../logo/search.png) no-repeat 95%;
+}
+/*导航*/
+.head-item-nav ul {
+	margin: 0 20px 0 0;
+	list-style: none;
+}
+/*导航1*/
+.head-item-nav ul li {
+	display: inline;
+	width: 100px;
+}
+/*导航1-1功能项*/
+.nav-left ul li {
+	padding: 0 20px;
+}
+/*导航1-2登陆*/
+.nav-right ul li {
+	padding: 0 5px;
+	cursor: pointer; 
+}
+
+.nav-left ul li a {
+	text-decoration: none;
+	color: black;
+}
+/*登录弹框按钮*/
+#popLoginBox {
+	background: #027e89; 
+	line-height: 20px; 
+	color: white; 
+	padding: 6px 17px; 
+	font-size: 15px;
+}
+/*注册弹框按钮*/
+#popRegisterBox {
+	font-size: 15px; 
+	color: #a3a7a7
+}
+
+
+
+
+
+
+
+/*登录框*/
+#login,#register {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 350px;
+	height: 405px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 0px 17px 0 rgba(28,31,33,.1) inset;
+			-webkit-transform: translate(-50%,-50%);
+    	-moz-transform: translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    z-index: 3;
+}
+
+#login-head, #register-head{
+	padding: 35px 0 20px 50px;
+	font-size: 25px;
+}
+
+/*登陆和注册功能*/
+.login-feature,.register-feature {
+	list-style: none;
+	color: #A8A8A8;
+	border-bottom: 2px solid #C4C4C4;
+	font-size: 18px;
+	padding: 0;
+	box-sizing: border-box;
+	margin-bottom: 35px;
+}
+
+#login-head ul li,#register-head ul li {
+	display: inline; /*让登陆和注册并排显示*/
+	float: left;
+    cursor: pointer;
+    width: 125px;
+    height: 35px;
+    text-align: center;
+}
+
+.login-active{
+	color: #006871;
+	border-bottom: 2px solid #006871;
+}
+
+
+
+
+
+
+section {
+
+
+}
+
+/*最近的活动模块*/
+.recent-activites {
+	width:30%; 
+	height:100%; 
+	display: inline; 
+	float: right; 
+	background: rgb(43,51,59); 
+	border-radius: 0 10px 10px 0; 
+	color: #999;
+}
+
+#recent-item-title:hover {
+	border-bottom: solid 3px #ef9632;
+}
+
+/*小图标123*/
+.icon {
+	display: inline-block;
+	font-size: 12px;
+	height: 18px;
+    width: 18px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #6f6f6f;
+    font-style: normal;
+    padding: 0px;
+    margin: 0 5px;
+}
+
+.icon2 {
+	border-color: #ef9632;
+	background: #ef9632;
+	color: #fff;
+	text-align: center;
+}
+
+/*最近的活动-活动名称li之间的距离*/
+.recent-activites ul li {
+	padding: 8px;
+}
+
+.recent-activites-item:hover {
+	background: #0a2729;
+}
+
+/*五颜六色各大活动板块*/
+.activites {
+	width: 18%; 
+	padding: 7.5% 0; 
+	border-radius: 10px; 
+	box-shadow: 0 10px 14px 0 rgba(28,31,33,.2);
+	font-size: 23px;
+	font-weight: 800;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+
+
+footer a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+footer a {
+	color: white;
+}
+
+/*GitHub&weibo图标定位*/
+footer a i {
+	padding: 20px 0 20px 20px;
+}
+

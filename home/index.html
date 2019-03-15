@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>素拓系统</title>
+	<link rel="icon" href="../logo/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<!-- 字体图标库 -->
+	<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
+	<!-- 新 Bootstrap 核心 CSS 文件 --> 
+	<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
+	<!-- jQuery文件, 务必在bootstrap.min.js 之前引入 --> 
+	<script src="../jquery-3.3.1.js"></script> 
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 --> 
+	<script src="../bootstrap-3.3.7/js/bootstrap.js"></script>
+	<!-- 表单提交的form插件 -->
+	<script src="../jquery.form.js"></script>
+
+</head>
+
+<body>
+<div id="box">
+
+	<!-- 遮罩 -->
+	<div id="loginCover" style="background: #000; position: absolute; left: 0px; top: 0px; width: 100%; opacity: .7; display: none; z-index: 2 ">
+		
+	</div>
+
+	<!-- 登陆模块 -->
+	<div id="login">
+		
+		<div id="login-head">
+			<a href="#"><img src="../logo/login_title.png"  style="width: 170px"></a>
+
+			<ul style="padding:20px 0">
+				<li class="login-feature" id="login-feature-left">登 陆</li>
+				<li class="login-feature" id="login-feature-right">注 册</li>
+			</ul>
+
+		</div>			
+		
+		<div id="login-body">			
+
+		<form action="" method="">
+
+			<input type="text" name="userId" class="form-control" placeholder="请输入学号"  style="width: 250px; margin: auto;background: url(../logo/user.png) no-repeat 8px 7.5px; padding-left: 30px">
+			<br>
+
+			<div class="passwordHide" style="position: relative;">
+			<i class="fa fa-eye-slash" style="position: absolute; left: 79%; top: 30%; color: #A8A8A8; cursor: pointer;"></i>
+			<input type="password" id="password" name="password" value="" class="form-control" placeholder="请输入密码" style="width: 250px; margin: auto; background: url(../logo/key.png) no-repeat 8px 7.5px; padding: 0 30px">
+			</div>
+
+			<br>
+			<p style="padding-left: 230px"><a href="#">忘记密码？</a></p>
+			
+			<button class="btn btn-success" style="display:block; width: 250px; margin:auto; font-size: 16px; background-color: rgb(0,104,113); border-color: rgb(0,104,113)">登 陆</button>
+		</form>
+
+		</div>
+	</div>
+
+	<!-- 注册模块 -->
+	<div id="register" style="height: 450px;">
+		
+		<div id="register-head">
+			<a href="#"><img src="../logo/login_title.png"  style="width: 170px"></a>
+
+			<ul style="padding:20px 0">
+				<li class="register-feature" id="register-feature-left">登 陆</li>
+				<li class="register-feature" id="register-feature-right">注 册</li>
+			</ul>
+
+		</div>			
+		
+		<div id="register-body">			
+
+		<form id="register-form" name="register-form" action="service.php" method="post"  autocomplete="off" onsubmit="return saveReport(); ">
+			<input type="text" id="userId" name="userId" value="" class="form-control" placeholder="请输入注册学号"  style="width: 250px; margin: auto;background: url(../logo/user.png) no-repeat 8px 7.5px; padding-left: 30px">
+			<br>
+
+			<input type="text" id="userName" name="userName" value="" class="form-control" placeholder="请输入真实姓名"  style="width: 250px; margin: auto;background: url(../logo/name.png) no-repeat 8px 7.5px; padding-left: 30px">
+			<br>
+
+			<div class="passwordHide" style="position: relative;">
+			<i class="fa fa-eye-slash" style="position: absolute; left: 79%; top: 30%; color: #A8A8A8; cursor: pointer;"></i>
+			<input type="password" id="password" name="password" value="" class="form-control" placeholder="请输入注册密码" style="width: 250px; margin: auto; background: url(../logo/key.png) no-repeat 8px 7.5px; padding: 0 30px">
+			</div>
+
+
+			<br><br>
+			
+			<button type="submit" id="btn-register" class="btn btn-success" style="display:block; width: 250px; margin:auto; font-size: 16px; background-color: rgb(0,104,113); border-color: rgb(0,104,113)">注 册</button>
+
+			<!-- 隐藏input元素用于验证是否提交 -->
+			<input type="hidden" name="action" value="addData" id="action"/>
+		</form>
+		
+		</div>
+	</div>
+
+	
+	<header>
+		<!-- 页眉 -->
+		<div class="head-container" style="">
+			<div class="head-item-logo">
+				<img src="../logo/title.png">	
+			</div>
+
+			<div class="head-item-nav nav-left head-item">
+				<ul>
+					<li><a href="#"><i class="fa fa-home" style="font-size: 18px;"></i>&nbsp;首页</a></li>
+					<li><a href="#">活动资讯</a></li>
+					<li><a href="#">经历公示</a></li>
+				</ul>
+			</div>
+
+			<div class="head-item-search">
+				<input type="text" name="search" class="form-control" placeholder="搜索活动..." style="">
+
+			</div>	
+
+			<div class="head-item-nav nav-right">	
+				<ul>
+					<li id="popLoginBox" class="btn" style=" ">登陆</li>
+					<li id="popRegisterBox" style="">注册</li>
+				</ul>
+			</div>			
+		</div>
+	</header>
+
+	<section>
+
+		<!-- 首页活动 -->
+		<div class="activities" style=" min-width: 1080px; width: 80%;height: 450px; border-radius: 10px; 
+		box-shadow: 0 12px 14px 0 rgba(28,31,33,.2);
+		margin: 0 auto;;
+		">
+
+			<!-- 活动轮播模块 -->
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel"
+			style="width: 70%; border-radius: 10px 0 0 10px; display: inline-block;">
+				<!-- 指标 -->
+			  	<ol class="carousel-indicators">
+			    	<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    	<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    	<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			    	<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+			  	</ol>
+			 
+				<!-- 滑动图 -->
+				<div class="carousel-inner" role="listbox"style="border-radius: 10px 0 0 10px;">
+				    <div class="item active">
+				      	<img src="img/1.jpg" style="width:100%; height: 450px; overflow: hidden;">
+				      	<div class="carousel-caption">
+        					杨峰老师讲话
+      					</div>
+				    </div>
+
+				    <div class="item">
+				        <img src="img/2.jpg" style="width:100%; height: 450px; overflow: hidden;">
+				        <div class="carousel-caption">
+        					中文演讲大赛
+      					</div>
+				    </div>
+
+				    <div class="item">
+				        <img src="img/3.jpg" style="width:100%; height: 450px; overflow: hidden;">
+				        <div class="carousel-caption">
+        					第十八届IT文化节闭幕式
+      					</div>
+				    </div>
+				 
+				    <div class="item">
+				        <img src="img/4.jpg" style="width:100%; height: 450px; overflow: hidden;">
+				        <div class="carousel-caption">
+        					信息学院篮球赛
+      					</div>
+				    </div>
+				 
+				</div>
+			 
+				<!-- 左右控制符 -->
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="border-radius: 10px 0 0 10px;">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>			 
+				</a>
+
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" style="border-radius: 10px 0 0 10px;">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				</a>		 
+			</div>
+
+			<!-- 最近的活动模块 -->
+			<div class="recent-activites" style="padding: 0;margin: 0">
+				<ul style="display: inline-block; list-style: none; width:100%; padding: 0px;">
+					<li style="text-align: center; font-size: 18px; font-weight: 500; line-height: 40px; background: #006871; color: white; border-top-right-radius: 10px; ">
+						<span id="recent-item-title" style="font-weight:bold; padding-bottom: 16.5px; ">最近的活动</span>
+					</li>
+					<li class="recent-activites-item" style="margin-top: 15px;" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-10">
+						<i class="icon icon2"> 01 </i>
+						<span>经济学院“2020人民银行招聘上岸攻略”讲座</span>
+					</li>
+					<li  class="recent-activites-item" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-11">
+						<i class="icon icon2" style=""> 02 </i>
+						<span>外国语学院中日文化节</span>
+					</li>
+					<li  class="recent-activites-item" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-12">
+						<i class="icon icon2">03</i>
+						<span>艺术与设计学院《粤茶•曰器》讲座</span>
+					</li>
+					<li  class="recent-activites-item" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-13">
+						<i class="icon">04</i>
+						<span>外国语学院高顿财经ACCA分享会</span>
+					</li>
+					<li  class="recent-activites-item" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-14">
+						<i class="icon">05</i>
+						<span>图书馆雅风xAIESEC人生体验馆活动</span>
+					</li>
+					<li  class="recent-activites-item" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-15">
+						<i class="icon">06</i>
+						<span>外院全国大学生英语等级考试（四级）</span>
+					</li>
+					<li  class="recent-activites-item" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-16">
+						<i class="icon">07</i>
+						<span>图书馆不占座21天打卡行动志愿服务活动</span>
+					</li>
+					<li  class="recent-activites-item" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-17">
+						<i class="icon">08</i>
+						<span>2019年银行春季校园招聘就业指导讲座</span>
+					</li>
+					<li  class="recent-activites-item" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-18">
+						<i class="icon">09</i>
+						<span>关于广州历史图像解读技巧的讲座</span>
+					</li>
+					<li  class="recent-activites-item" data-toggle="tooltip" data-placement="left" data-title="活动时间：2019-2-19">
+						<i class="icon">10</i>
+						<span>“财经人之职业发展&简历，面试原则”讲座</span>
+					</li>
+				</ul>
+			</div>
+			
+
+		</div>
+
+		<!-- 关注板块说明 -->
+		<div>
+			<h3 class="types-title" style="    position: relative;top: 15px;font-size: 20px;color: #93999F;
+    letter-spacing: 0.6px; text-align: center; vertical-align: middle;">
+				<span style="font-weight: 700;">大家正在关注</span><br>
+				<i class="fa fa-bolt" style="font-size: 11px"></i>
+				<span class="" style="font-size: 10px;"> PEOPLE ARE WATCHING </span>
+				<i class="fa fa-bolt" style="font-size: 11px"></i>
+			</h3>
+		</div>
+
+		<!-- 五颜六色各大板块 -->
+		<div class="" 
+		style="display: flex; align-items: center; justify-content: center; justify-content: space-between;
+		width: 80%; border-radius: 10px; margin: 0 auto; padding: 20px 0;
+		">
+
+			<div class="activites charitable" style="background: #FF7400">
+				公益活动
+			</div>
+			
+			<div class="activites student-league" style="background: #2EACB8">
+				社团活动
+			</div>
+
+			<div class="activites subject-competition" style="background: #B4B900">
+				学科竞赛
+			</div>
+
+			<div class="activites academic-talk" style="background: #540EAD">
+				学术讲座
+			</div>
+
+			<div class="activites social-practice" style="background: #00A480">
+				社会实践
+			</div>
+
+		</div>
+
+		
+	</section>
+
+	<footer>
+		<div class="footer" style="width: 100%; background: #006871; margin-top: 50px; box-shadow: 0 -15px 50px 0 rgba(28,31,33,.1); position: relative; color: #cbe3e6;">
+			
+			<div style="width: 80%; margin:auto; padding: 30px 0">
+				<a href="https://github.com/SelmaXian" style="position: absolute; right: 10%;">
+					<i class="fa fa-github" style="font-size: 40px; color: black;"></i>
+				</a>
+
+				<a href="#" style="position: absolute; right: 14.5%;">
+					<i class="fa fa-weibo" style="font-size: 40px; color: black;"></i>
+				</a>
+
+				<i class="fa fa-link"></i>
+				<span>友情链接：</span>
+				
+				<i class="fa fa-external-link-square" style="padding-left: 10px;"></i>
+				<a href="http://www.gdufe.edu.cn/main.htm">广东财经大学官网</a>
+
+				<i class="fa fa-external-link-square" style="padding-left: 10px;"></i>
+				<a href="http://my.gdufe.edu.cn/">广东财经大学信息门户</a>
+
+				<i class="fa fa-external-link-square" style="padding-left: 10px;"></i>
+				<a href="http://jwxt.gdufe.edu.cn/jsxsd/">广东财经大学教务管理系统</a>
+
+				<i class="fa fa-external-link-square" style="padding-left: 10px;"></i>
+				<a href="http://sztz.gdufe.edu.cn/sztz/login.jsp">广东财经大学素拓系统</a>
+
+				<br><br><i class="fa fa-thumbs-o-up"></i>
+				<span>特别鸣谢：&nbsp;&nbsp;</span>
+				<i class="fa fa-graduation-cap" style="color: black;">&nbsp;张婧炜老师</i><br>
+
+				<p style="text-align: center; margin: 0; font-size: 12px; color: #b7c6c9">© 2019 sztz.com All Rights Reserved  粤ICP备 123456789号</p>
+			</div>
+			
+		</div>
+
+	</footer>
+
+</div>
+
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
+
