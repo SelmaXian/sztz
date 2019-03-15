@@ -1,10 +1,12 @@
+
 body {
 	margin: 0;
 	padding:0;
 	font-size: 16px;
 	font-family: "Arial","Hiragino Sans GB", "Helvetica", "sans-serif";
 	min-width: 1080px;
-	background: rgb(246,246,246);
+/*	background: rgb(246,246,246);*/
+
 	/*滚动条样式*/
 	scrollbar-arrow-color: gray; /*上下按钮上三角箭头的颜色*/
 	scrollbar-face-color: #CBCBCB; /*滚动条凸出部分的颜色*/
@@ -17,17 +19,11 @@ body {
 	scrollbar-base-color: #a5a5a5; /*滚动条的基本颜色*/
 	Cursor:url(mouse.cur); /*自定义个性鼠标*/
 	/*以上2项适用与：body、div、textarea、iframe*/
-	z-index: 0;
 }
 
 
 ::-webkit-scrollbar {  /* 滚动条整体部分 */
 	width:5px;
-	margin-right:2px;
-	z-index: 0;
-}
-::-webkit-scrollbar :hover {  /* 滚动条整体部分 */
-	width:0px;
 	margin-right:2px;
 }
 ::-webkit-scrollbar-button { /* 滚动条两端的按钮 */
@@ -60,23 +56,16 @@ body {
 }
 
 
-#page-wrapper {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	height: 100%;	
-}
+
 
 
 
 /*页眉*/
 header {
 	display: block;
-	position: absolute; 
 	height: 100px;
 	width: 100%;
 	min-width: 1080px;	
-	z-index: 101;
 }
 
 .head-container {
@@ -151,30 +140,57 @@ header {
 
 
 
+#page-wrapper {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 1000px;	
+
+}
+
 
 #feature {
 	width: 20%;	
 	display: flex;
 	flex-direction: column;
-	background: rgb(48,51,54);
-	color: white;	
+
+	height: 700px;	
+
 }
 
 
 #user-info {
-	height:20%;
-	float: right;
+	height:30%;
+	position: relative;
+	margin: 0 0 10px 10px;
+	background: white;
+	box-shadow: 0 2px 14px 0 rgba(28,31,33,.2);
+	border-radius: 5px;
+
+}
+
+#user-info-bg {
+	width: 100%;
+	height: 35%;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
 	background: rgb(0,104,113);
+	box-shadow: 0 2px 7px 0 rgba(28,31,33,.1);
 }
-#time {
-	font-size: 25px;
-	text-align: center;
-	margin: 8px 0 4px 0;
+
+#user-info-circle {
+	margin: 10px auto; 
+	border-radius:50%;
+	width: 78px; 
+	height:78px; 
+	background: white;
+
 }
-#date {
-	font-size: 15px;
-	text-align: center;
-	margin: 4px 0;
+
+#user-info-circle>img {
+	width: 70px; 
+	margin: 4px 4px;
+
 }
 
 
@@ -185,9 +201,9 @@ header {
 
 
 #feature-item-info {
-	width: 80%;
-	height:100%;
-	margin: 0 auto;
-	padding: 0 200px;
+	width: 70%;
+	height:500px;
+	padding: 0;
+	background: blue;
 }
 

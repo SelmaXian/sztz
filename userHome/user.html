@@ -22,54 +22,62 @@
 </head>
 <body>
 
-<div id="page-wrapper">
-
-
-	<header style="display: ">
-	<!-- 页眉 + 滑动隐藏 -->
-	<div class="head-slide-wrapper" style="height: 30px;">
-		<div class="head-container" style="display: none">
-			<div class="head-item-logo">
-				<a href="../home/index.html"><img src="../logo/title.png"></a>
-			</div>
-
-			<div class="head-item-nav nav-left head-item">
-				<ul>
-					<li><a href="../home/index.html"><i class="fa fa-home" style="font-size: 18px;"></i>&nbsp;首页</a></li>
-					<li><a href="#">活动资讯</a></li>
-					<li><a href="#">经历公示</a></li>
-				</ul>
-			</div>
-
-			<div class="head-item-search">
-				<input type="text" name="search" class="form-control" placeholder="搜索活动..." style="">
-
-			</div>	
-
-			<div class="head-item-nav nav-right">	
-				<ul>
-					<li id="popLoginBox" class="btn" style=" ">登陆</li>
-					<li id="popRegisterBox" style="">注册</li>
-				</ul>
-			</div>			
+<header style="">
+	<!-- 页眉 -->
+	<div class="head-container" style="">
+		<div class="head-item-logo">
+			<a href="../home/index.html"><img src="../logo/title.png"></a>
 		</div>
+
+		<div class="head-item-nav nav-left head-item">
+			<ul>
+				<li><a href="../home/index.html"><i class="fa fa-home" style="font-size: 18px;"></i>&nbsp;首页</a></li>
+				<li><a href="#">活动资讯</a></li>
+				<li><a href="#">经历公示</a></li>
+			</ul>
+		</div>
+
+		<div class="head-item-search">
+			<input type="text" name="search" class="form-control" placeholder="搜索活动..." style="">
+
+		</div>	
+
+		<div class="head-item-nav nav-right">	
+			<ul>
+				<li id="popLoginBox" class="btn" style=" ">登陆</li>
+				<li id="popRegisterBox" style="">注册</li>
+			</ul>
+		</div>			
 	</div><!-- 页眉End -->
 
-	</header>
+</header>
 
+
+<div id="page-wrapper" >
+
+
+	<div id="feature-item-info">
+		
+	</div>
 
 
 	<div id="feature">
 			
 		<div id="user-info">
-			<p id="time"></p>
-			<p id="date"></p>
-			<div style="margin: 0 auto; border-radius:50%;width: 108px; height:108px; background: rgb(48,51,54);">
-				
-				<img src="../logo/student.png" class="img-circle" style="width: 100px; background: white; margin: 4px 4px;">
+			<!-- 头像下的遮罩 -->
+			<div id="user-info-bg"></div>
+					
+			<div style="position: absolute; margin: 10px auto; width: 100%; top: 0">
+				<!-- 头像外边的圆框 -->
+				<div id="user-info-circle" style="">
+								
+					<img src="../logo/student.png" class="img-circle" style="">
+				</div>
+
+				<p style="text-align: center; font-size: 16px;">学生 - 冼升敏</p>
+				<p style="text-align: center; font-size: 12px;">信息管理与信息系统</p>
 			</div>
-			<p style="text-align: center; font-size: 16px;">学生 - 冼升敏</p>
-			<p style="text-align: center; font-size: 12px;">信息管理与信息系统</p>
+			
 		</div>
 
 
@@ -79,12 +87,10 @@
 
 	</div>
 
-	<div id="feature-item-info">
-		
-	</div>
 
 
 </div>
+
 
 
 
