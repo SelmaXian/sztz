@@ -95,9 +95,26 @@ header {
 	height: 30px; 
 	background: url(../../logo/search.png) no-repeat 95%;
 }
+/*用户姓名*/
+.head-item-user {
+	border-right: 1px solid #DADADA; 
+	padding: 5px 20px 5px 50px;
+	color: rgb(105,110,120);
+	cursor: pointer;
+}
+.head-item-user:hover {
+	color: rgb(250,125,60);
+}
+.head-item-user span i{
+	font-size: 16px; 
+}
+.head-item-user span{
+	margin-left: 3px;
+}
 /*导航*/
 .head-item-nav ul {
 	margin: 0 20px 0 0;
+	padding-left: 20px;
 	list-style: none;
 }
 /*导航1*/
@@ -113,6 +130,13 @@ header {
 .nav-right ul li {
 	padding: 0 5px;
 	cursor: pointer; 
+}
+.nav-right ul li i:hover {
+	color: rgb(250,125,60);
+}
+.nav-right ul li i {
+	font-size: 17px;
+	color: rgb(105,110,120);
 }
 
 .nav-left ul li a {
@@ -148,8 +172,45 @@ header {
 
 }
 
-
 #feature {
+	width: 70%;
+	height: : 100%;
+}
+
+#feature-item {
+	height: 10%;
+	margin-bottom: 10px;
+	background: white;
+	box-shadow: 0 0 10px 0 rgba(28,31,33,.2);
+	border-radius: 5px;
+}
+#feature-item ul {
+	list-style: none;
+	display: flex;
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0 35px;
+}
+#feature-item ul li {
+	cursor: pointer;
+}
+#feature-item ul li i{
+	display: block;
+	text-align: center;
+	font-size: 35px;
+	margin-bottom: 5px;
+}
+
+#feature-item-info {
+	height: 90%;
+	margin-bottom: 10px;
+	background: white;
+	box-shadow: 0 0 10px 0 rgba(28,31,33,.2);
+	border-radius: 5px;
+}
+
+#sidebar {
 	width: 20%;	
 	display: flex;
 	flex-direction: column;
@@ -164,46 +225,45 @@ header {
 	position: relative;
 	margin: 0 0 10px 10px;
 	background: white;
-	box-shadow: 0 2px 14px 0 rgba(28,31,33,.2);
+	box-shadow: 0 2px 7px 0 rgba(28,31,33,.2);
 	border-radius: 5px;
 
 }
 
 #user-info-bg {
 	width: 100%;
-	height: 35%;
+	height: 40%;
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
 	background: rgb(0,104,113);
-	box-shadow: 0 2px 7px 0 rgba(28,31,33,.1);
+	box-shadow: 0 0 10px 0 rgba(28,31,33,.1);
 }
 
 #user-info-circle {
 	margin: 10px auto; 
 	border-radius:50%;
-	width: 78px; 
-	height:78px; 
+	width: 76px; 
+	height:76px; 
 	background: white;
 
 }
 
 #user-info-circle>img {
 	width: 70px; 
-	margin: 4px 4px;
+	margin: 3px 3px;
 
 }
 
 
-#feature-item {
+#recomend {
 	height:80%;
-	float: right;
+	margin-left: 10px;
+	background: white;
+	box-shadow: 0 0 10px 0 rgba(28,31,33,.2);
+	border-radius: 5px;
+}
+#recomend ul{
+	list-style: none;
 }
 
-
-#feature-item-info {
-	width: 70%;
-	height:500px;
-	padding: 0;
-	background: blue;
-}
 
