@@ -1,0 +1,45 @@
+/*内容框的高度*/
+#feature-item-info {
+	height: 464px;
+}
+
+#st-declaration-display {
+	width: 100.05%;
+	border-radius:5px;
+}
+#st-declaration-display tr th:first-child {
+	border-top-left-radius: 5px;
+}
+#st-declaration-display tr th:last-child {
+	border-top-right-radius: 5px;
+	width: 120px;
+}
+#st-declaration-display tr th {
+	width: 150px;
+	text-align: center;
+	background: #EDEDED;
+	padding: 10px 0;
+	font-size: 15px;
+}
+
+#st-declaration-display tr td {
+	border-bottom: 1px dashed #DADADA;
+	padding: 8px 30px;
+	text-align: center;
+}
+
+#feature-item ul li a, #feature-item ul li a span {
+	color: #DADADA
+}
+
+#st-declaration-display tr td button {
+
+	height: 27px;
+	font-size: 13px;
+	margin: 0;
+	padding: 4.5px 12px;
+}
+#st-declaration-display tr td button:hover {
+	background: #006871;
+	color: white;
+}

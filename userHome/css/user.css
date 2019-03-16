@@ -63,7 +63,7 @@ body {
 /*页眉*/
 header {
 	display: block;
-	height: 100px;
+	height: 80px;
 	width: 100%;
 	min-width: 1080px;	
 }
@@ -73,7 +73,7 @@ header {
 	width:100%;
 	min-width: 1075px;	
 	align-items:center;
-	height: 73px;
+	height: 65px;
 	font-size: 16px;
 	background: white;
 	box-shadow: 0 2px 14px 0 rgba(28,31,33,.2); 
@@ -99,7 +99,7 @@ header {
 .head-item-user {
 	border-right: 1px solid #DADADA; 
 	padding: 5px 20px 5px 50px;
-	color: rgb(105,110,120);
+	color: #F5F5F5;
 	cursor: pointer;
 }
 .head-item-user:hover {
@@ -111,6 +111,27 @@ header {
 .head-item-user span{
 	margin-left: 3px;
 }
+#user-info-check {
+	display: flex; 
+	justify-content: center; 
+	height: 40px; 
+	font-size: 10px;
+}
+.user-info-check-item {
+	text-align: center; 
+	padding:0 15px; 
+	border-right: 1px solid #DADADA;
+}
+.user-info-check-num {
+	font-size:18px;  
+	font-weight: 550;
+}
+.user-info-check-name {
+	color: #9D9D9D;
+}
+
+
+
 /*导航*/
 .head-item-nav ul {
 	margin: 0 20px 0 0;
@@ -121,6 +142,9 @@ header {
 .head-item-nav ul li {
 	display: inline;
 	width: 100px;
+}
+.head-item-nav ul li a{
+	color: ;
 }
 /*导航1-1功能项*/
 .nav-left ul li {
@@ -136,7 +160,7 @@ header {
 }
 .nav-right ul li i {
 	font-size: 17px;
-	color: rgb(105,110,120);
+	color: #F5F5F5;
 }
 
 .nav-left ul li a {
@@ -168,21 +192,20 @@ header {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	height: 1000px;	
+	height: 500px;	
 
 }
 
 #feature {
 	width: 70%;
-	height: : 100%;
 }
 
 #feature-item {
-	height: 10%;
-	margin-bottom: 10px;
+	height: 80px;
 	background: white;
 	box-shadow: 0 0 10px 0 rgba(28,31,33,.2);
 	border-radius: 5px;
+	margin-bottom: 13px;
 }
 #feature-item ul {
 	list-style: none;
@@ -191,39 +214,102 @@ header {
 	justify-content: space-around;
 	align-items: center;
 	padding: 0 35px;
+	margin-bottom: 13px;
 }
-#feature-item ul li {
-	cursor: pointer;
-}
-#feature-item ul li i{
+#feature-item ul li a i{
 	display: block;
 	text-align: center;
-	font-size: 35px;
+	font-size: 30px;
 	margin-bottom: 5px;
 }
+#feature-item ul li a {
+	text-decoration: none;
+}
+#feature-item ul li a span{
+	color: #333;
+}
+/*个人信息*/
+#func-personal-info a {
+	color: #0065da;
+}
+#func-personal-info :hover, #func-personal-info a:hover span {
+	color: #0F4685;
+}
+
+/*我的活动*/
+#func-my-activites a {
+	color: #0EB7C1;
+}
+#func-my-activites :hover, #func-my-activites a:hover span {
+	color: #078a92;
+}
+/*素拓申报*/
+#func-st-declaration a {
+	color: #34b05f;
+}
+#func-st-declaration :hover, #func-st-declaration a:hover span {
+	color: #00d048;
+}
+/*证书经历*/
+#func-certificate a {
+	color: #FF8D3C;
+}
+#func-certificate :hover, #func-certificate a:hover span {
+	color: #FF7400;
+}
+/*上传材料*/
+#func-upload-material a {
+	color: #F23451;
+}
+#func-upload-material :hover, #func-upload-material a:hover span {
+	color: #da3d78;
+}
+/*统计分析*/
+#func-statistical a {
+	color: #0f7f89;
+}
+#func-statistical :hover, #func-statistical a:hover span {
+	color: #006871;
+}
+
+
+
+
+
+
+
+
 
 #feature-item-info {
-	height: 90%;
+	height: 464px;
 	margin-bottom: 10px;
 	background: white;
 	box-shadow: 0 0 10px 0 rgba(28,31,33,.2);
 	border-radius: 5px;
 }
 
+
+
+
+
+
+
+
+
+
+
 #sidebar {
 	width: 20%;	
 	display: flex;
 	flex-direction: column;
-
-	height: 700px;	
-
+	min-height: 700px;	
 }
 
 
 #user-info {
-	height:30%;
+	height:190px;
 	position: relative;
-	margin: 0 0 10px 10px;
+	margin: 0 0 13px 13px;
 	background: white;
 	box-shadow: 0 2px 7px 0 rgba(28,31,33,.2);
 	border-radius: 5px;
@@ -255,15 +341,77 @@ header {
 }
 
 
-#recomend {
-	height:80%;
-	margin-left: 10px;
+
+
+
+
+
+#recent-activites {
+	height:355px;
+	margin-left: 13px;
 	background: white;
 	box-shadow: 0 0 10px 0 rgba(28,31,33,.2);
 	border-radius: 5px;
 }
-#recomend ul{
-	list-style: none;
+#recent-activites  ul{
+	display: inline-block; 
+	list-style: none; 
+	width:100%; 
+	padding: 0px;
+}
+#recent-activites ul li:first-child {
+	text-align: center; 
+	font-size: 17px; 
+	line-height: 42px; 
+	background: #006871; 
+	color: white; 
+	border-top-right-radius: 5px;  
+	border-top-left-radius: 5px;
+}
+#recent-activites ul li {
+	cursor: pointer;
+}
+#recent-item-title:hover {
+	border-bottom: solid 3px #ef9632;
 }
 
+/*小图标123*/
+.icon {
+	display: inline-block;
+	font-size: 12px;
+	height: 18px;
+    width: 18px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #6f6f6f;
+    font-style: normal;
+    padding: 0px;
+    margin: 0 5px;
+}
 
+.icon2 {
+	border-color: #ef9632;
+	background: #ef9632;
+	color: #fff;
+	text-align: center;
+}
+
+/*最近的活动-活动名称li之间的距离*/
+#recent-activites ul li {
+	padding: 4px;
+}
+
+.recent-activites-item a {
+	color: #333;
+}
+.recent-activites-item a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.recent-activites-item:hover a{
+	color: white;
+}
+.recent-activites-item:hover{
+	background: #006871;
+} 
