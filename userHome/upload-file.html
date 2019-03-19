@@ -5,7 +5,7 @@
 	<title>素拓系统</title>
 	<link rel="icon" href="../logo/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/user.css">
-	<link rel="stylesheet" type="text/css" href="css/st-declaration.css">
+	<link rel="stylesheet" type="text/css" href="css/upload-file.css">
 
 	<!-- 字体图标库 -->
 	<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
@@ -90,8 +90,8 @@
 				</li>
 				<li id="func-st-declaration">
 					<a href="st-declaration.html">
-						<i class="fa fa-paper-plane" style="color: #00d048;"></i>
-						<span  style="color: #00d048; font-weight: 700;">素拓申报</span>
+						<i class="fa fa-paper-plane"></i>
+						<span >素拓申报</span>
 					</a>
 				</li>
 				<li id="func-certificate" style=" ">
@@ -102,8 +102,8 @@
 				</li>
 				<li id="func-upload-file" style=" ">
 					<a href="upload-file.html">
-						<i class="fa fa-folder-open"></i>
-						<span>上传材料</span>
+						<i class="fa fa-folder-open" style="color: #da3d78;"></i>
+						<span style="color: #da3d78; font-weight: 700;">上传材料</span>
 					</a>
 				</li>
 				<li id="func-statistical" style="color: ">
@@ -119,283 +119,74 @@
 
 		<div id="feature-item-info">
 			<div style="">
-
-				<!-- 自制下拉菜单 -->
-				<div>
-					<ul id="st-declaration-classify">
-						<li>
-							<i class="fa fa-caret-right" style="font-size: 20px;"></i>
-							<span style="font-weight: 550;">&nbsp;活动分类</span>
-						</li>
-						<li>
-							<ul>
-								<li>
-									<a href="#">公益活动</a>
-								</li>
-								<li>
-									<a href="#">社团活动</a>
-								</li>
-								<li>
-									<a href="#">学科竞赛</a>
-								</li>
-								<li>
-									<a href="#">学术讲座</a>
-								</li>
-								<li>
-									<a href="#">社会实践</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					
-				</div>
+				<a href="#" id="upload-file-info-edit">
+					<i class="fa fa-plus-circle"></i>
+					<span>添加</span>
+				</a>
 
 				<h3>
 					<i class="fa fa-angle-double-right"></i>
-					<span>素拓申报</span>
+					<span>已上传</span>
 				</h3>
 
 			</div>
 
+			<!-- 展示区 -->
+			<div id="upload-file-display" style="margin-left: 35px;margin-right: 30px;">			
 
-			<!-- 内容展示区 -->
-			<div id="st-declaration-display">
-
-				<ol style="padding-left: 25px;margin-bottom: 0;">
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>信息学院</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
+				<ol class="upload-file-display-item">
+				    <li>公益活动证明
+				    	<span>2019-3-17</span>
+				        <ul>
+				        	<li>
+								名称：公益活动证明
+							</li>
+							<li>
+								类型：公益活动
+							</li>
+							<li>
+								说明：公益活动证明
+							</li>
+				        </ul>
+				    </li>
+				    <li>学科竞赛作品
+				    	<span>2019-3-17</span>
+				        <ul>
+				        	<li>
+								名称：学科竞赛作品
+							</li>
+							<li>
+								类型：学科竞赛
+							</li>
+							<li>
+								说明：学科竞赛作品
+							</li>
+				        </ul>
+				    </li>
+				    <li>社会实践证明
+				    	<span>2019-3-17</span>
+				        <ul>
+				        	<li>
+								名称：社会实践证明
+							</li>
+							<li>
+								类型：社会实践
+							</li>
+							<li>
+								说明：社会实践证明
+							</li>
+				        </ul>
+				    </li>
+				    
 				</ol>
-			</div><!-- 内容展示区End -->
+
+			</div>
+			<!-- 展示区end -->
 
 
-
-
-
-
-
-			<table id="st-declaration-display" style="display: none;">
-				<tr>
-					<th>活动序号</th>
-					<th>活动名称</th>
-					<th>主办单位</th>
-					<th>活动时间</th>
-					<th>活动类型</th>
-					<th>操作</th>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-					
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
 
 				
-			</table>
+
 
 			<!-- 翻页 -->
 			<nav style="position: absolute; bottom: 20px; right: 50%; transform: translate(50%)">
@@ -562,7 +353,7 @@
 
 
 
-<script src="js/st-declaration.js"></script>
+<script src="js/upload-file.js"></script>
 
 
 </body>

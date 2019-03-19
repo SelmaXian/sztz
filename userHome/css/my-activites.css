@@ -1,31 +1,116 @@
-
-
-#my-activites-display {
-	width: 100.05%;
-	border-radius:5px;
+#feature-item-info {
+	min-height: 464px;
+	position: relative;
+	padding-bottom: 63px;
 }
-#my-activites-display tr th:first-child {
-	border-top-left-radius: 5px;
-	width: 120px;
-}
-#my-activites-display tr th:last-child {
-	border-top-right-radius: 5px;
-}
-#my-activites-display tr th {
-	width: 150px;
-	text-align: center;
-	background: #EDEDED;
-	padding: 10px 0;
-	font-size: 15px;
-}
-#my-activites-display tr td:first-child {
-	text-align: center;
-}
-#my-activites-display tr td {
-	border-bottom: 1px dashed #DADADA;
-	padding: 10px 30px;
-}
-
+/*功能键灰色*/
 #feature-item ul li a, #feature-item ul li a span {
 	color: #DADADA
+}
+
+#feature-item-info div h3 {
+	font-size: 18px;
+	font-weight: 550;
+	margin: 13px 30px 0px 35px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #DADADA;
+}
+#feature-item-info h3 i {
+	font-size: 23px;
+	margin: 15px 0px 13px 0;	
+	padding-right: 5px;
+}
+/*自制下拉菜单头*/
+#my-activites-classify {
+	position: relative;	
+	float: right;
+	list-style: none;
+	font-size: 15.5px;
+	color: #9D9D9D;
+	margin-top: 20px;
+	padding-right: 30px;
+	letter-spacing: 1px;
+	z-index: 111;
+	cursor: pointer;
+}
+/*自制下拉菜单弹出内容*/
+#my-activites-classify li ul {
+	position: absolute;
+	display: none;
+	list-style: none;
+	font-size: 15px;
+	padding: 7px 0;
+	color: #9D9D9D;
+	border-radius: 5px;
+	border: 1px solid rgb(225,225,225);
+	background: white;
+	box-shadow: 0 7px 10px 0 rgba(28,31,33,.1);
+	letter-spacing: 1px;
+}
+#my-activites-classify li ul li a {
+	text-decoration: none;
+	color: gray;
+	padding: 7px 15px;
+	line-height: 25px;
+}
+#my-activites-classify li ul li :hover {
+	background: rgb(240,240,240);
+	color: black;
+}
+
+
+
+#my-activites-display ol li {
+	position: relative;
+	padding: 7px 0;
+	font-size: 14px;
+}
+/*奇数行加背景*/
+#my-activites-display>ol>li:nth-child(odd) {
+	background: #EDEDED;
+}
+/*地点定位*/
+#my-activites-display ol li span:nth-child(2) {
+	position: absolute;
+	left: 420px;
+}
+/*日期定定位*/
+#my-activites-display ol li span:nth-child(3) {
+	position: absolute;
+	left: 630px;
+}
+/*待审核iconfloat*/
+#my-activites-display ol li i {
+	float: right;
+	font-size: 12px;
+	color: #BBBBBB;
+	margin-top: 5px;
+}
+
+/*展示区列表隐藏*/
+#my-activites-display>ol>li>ul{
+    display: none;
+}
+/*隐藏内容区*/
+#my-activites-display ol li ul li {
+	position: relative;
+	left: -10px;
+	list-style: none;
+	color: gray;
+    font-size: 12px;
+    padding: 2px;
+    margin: 3px 0;
+    background: none;
+}
+
+
+/*展示区单独滚动，隐藏滚动条*/
+#my-activites-display {
+	max-height: 341px;
+	overflow-y: scroll;
+	border-bottom: 1px solid #DADADA;
+	margin: 0 30px 0 35px;
+}
+#my-activites-display::-webkit-scrollbar {
+	width:0;
 }

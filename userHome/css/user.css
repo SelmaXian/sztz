@@ -1,4 +1,7 @@
 
+html {
+	height: auto;
+}
 body {
 	margin: 0;
 	padding:0;
@@ -104,6 +107,7 @@ header {
 }
 .head-item-user:hover {
 	color: rgb(250,125,60);
+	text-decoration: none;
 }
 .head-item-user span i{
 	font-size: 16px; 
@@ -192,7 +196,7 @@ header {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	height: 500px;	
+	height: auto;	
 
 }
 
@@ -258,10 +262,10 @@ header {
 	color: #FF7400;
 }
 /*上传材料*/
-#func-upload-material a {
+#func-upload-file a {
 	color: #F23451;
 }
-#func-upload-material :hover, #func-upload-material a:hover span {
+#func-upload-file :hover, #func-upload-material a:hover span {
 	color: #da3d78;
 }
 /*统计分析*/
@@ -302,7 +306,7 @@ header {
 	width: 20%;	
 	display: flex;
 	flex-direction: column;
-	min-height: 700px;	
+	min-height: 550px;	
 }
 
 

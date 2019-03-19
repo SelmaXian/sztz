@@ -51,9 +51,11 @@
 
 		</div>
 
-		<div class="head-item-user">
-			<i class="fa fa-user-circle-o" style=""></i>
-			<span class="user-name">冼升敏</span>
+		<div>
+			<a class="head-item-user" href="index.html">
+				<i class="fa fa-user-circle-o" style=""></i>
+				<span class="user-name">冼升敏</span>
+			</a>
 		</div>
 
 		<div class="head-item-nav nav-right">	
@@ -74,9 +76,9 @@
 		<div id="feature-item">
 			<ul>
 				<li id="func-personal-info">
-					<a href="user.html">
-						<i class="fa fa-address-card func-icon"></i>
-						<span>个人信息</span>
+					<a href="user-info.html">
+						<i class="fa fa-address-card func-icon" style="color: #0F4685;"></i>
+						<span style="color: #0F4685;">个人信息</span>
 					</a>
 				</li>
 				<li id="func-my-activites" style=" ">
@@ -93,19 +95,19 @@
 					</a>
 				</li>
 				<li id="func-certificate" style=" ">
-					<a href="#">
+					<a href="certificate.html">
 						<i class="fa fa-pencil-square"></i>
 						<span>证书经历</span>
 					</a>
 				</li>
-				<li id="func-upload-material" style=" ">
-					<a href="#">
+				<li id="func-upload-file" style=" ">
+					<a href="upload-file.html">
 						<i class="fa fa-folder-open"></i>
 						<span>上传材料</span>
 					</a>
 				</li>
 				<li id="func-statistical" style="color: ">
-					<a href="#">
+					<a href="statistical.html">
 						<i class="fa fa-pie-chart"></i>
 						<span>统计分析</span>
 					</a>
@@ -117,7 +119,7 @@
 
 		<div id="feature-item-info">
 			<div style="">
-				<a href="#" id="user-info-edit">
+				<a href="user-info-edit.html" id="user-info-edit-btn">
 					<i class="fa fa-pencil"></i>
 					<span>编辑</span>
 				</a>
@@ -129,6 +131,7 @@
 
 			</div>
 
+			<form action="" name="" id="">
 			<table id="user-info-display">
 				<tr>
 					<th>
@@ -142,6 +145,21 @@
 					</th>
 					<td>
 						冼升敏
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						密码：
+					</th>
+					<td>
+						123456
+					</td>
+					<th>
+						身份证号：
+					</th>
+					<td>
+						7654321
 					</td>
 				</tr>
 
@@ -192,21 +210,6 @@
 
 				<tr>
 					<th>
-						政治面貌：
-					</th>
-					<td>
-						共青团员
-					</td>
-					<th>
-						学制：
-					</th>
-					<td>
-						4年
-					</td>
-				</tr>
-
-				<tr>
-					<th>
 						籍贯：
 					</th>
 					<td>
@@ -222,16 +225,16 @@
 
 				<tr>
 					<th>
-						身份证号：
+						政治面貌：
 					</th>
 					<td>
-						7654321
+						共青团员
 					</td>
 					<th>
-						联系方式：
+						学制：
 					</th>
 					<td>
-						1234567
+						4年
 					</td>
 				</tr>
 
@@ -239,10 +242,15 @@
 					<th>
 						电子邮箱：
 					</th>
-					<td colspan="3">
+					<td>
 						827122808@qq.com
 					</td>
-					
+					<th>
+						联系方式：
+					</th>
+					<td>
+						1234567
+					</td>
 				</tr>
 
 				<tr>
@@ -256,6 +264,9 @@
 
 				
 			</table>
+			</form>
+
+
 		</div>
 	</div>
 
@@ -390,10 +401,20 @@
 
 
 
+<footer>
+    <div class="footer" style="width: 100%; background: #006871; margin-top: 5px; box-shadow: 0 -7px 20px 0 rgba(28,31,33,.1); position: relative; color: #cbe3e6;">
+        
+        <div style="width: 80%; margin:auto; padding: 15px 0">
+
+            <p style="text-align: center; margin: 0; font-size: 12px; color: #b7c6c9">© 2019 广东财经大学 版权所有</p>
+        </div>
+        
+    </div>
+
+</footer>
 
 
-
-<script src="js/user.js"></script>
+<script src="js/user-info.js"></script>
 
 
 </body>

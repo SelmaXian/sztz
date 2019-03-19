@@ -5,7 +5,8 @@
 	<title>素拓系统</title>
 	<link rel="icon" href="../logo/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/user.css">
-	<link rel="stylesheet" type="text/css" href="css/st-declaration.css">
+	<link rel="stylesheet" type="text/css" href="css/user-info.css">
+	<link rel="stylesheet" type="text/css" href="css/user-info-edit.css">
 
 	<!-- 字体图标库 -->
 	<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
@@ -77,21 +78,21 @@
 			<ul>
 				<li id="func-personal-info">
 					<a href="user-info.html">
-						<i class="fa fa-address-card func-icon"></i>
-						<span>个人信息</span>
+						<i class="fa fa-address-card func-icon" style="color: #0F4685;"></i>
+						<span style="color: #0F4685;">个人信息</span>
 					</a>
 				</li>
-				<li id="func-my-activites">
+				<li id="func-my-activites" style=" ">
 					<a href="my-activites.html">
 						<i class="fa fa-group"></i>
-						<span >我的活动</span>
+						<span>我的活动</span>
 					</a>
 				</li>
 				</li>
-				<li id="func-st-declaration">
+				<li id="func-st-declaration" style=" ">
 					<a href="st-declaration.html">
-						<i class="fa fa-paper-plane" style="color: #00d048;"></i>
-						<span  style="color: #00d048; font-weight: 700;">素拓申报</span>
+						<i class="fa fa-paper-plane"></i>
+						<span>素拓申报</span>
 					</a>
 				</li>
 				<li id="func-certificate" style=" ">
@@ -119,302 +120,189 @@
 
 		<div id="feature-item-info">
 			<div style="">
-
-				<!-- 自制下拉菜单 -->
-				<div>
-					<ul id="st-declaration-classify">
-						<li>
-							<i class="fa fa-caret-right" style="font-size: 20px;"></i>
-							<span style="font-weight: 550;">&nbsp;活动分类</span>
-						</li>
-						<li>
-							<ul>
-								<li>
-									<a href="#">公益活动</a>
-								</li>
-								<li>
-									<a href="#">社团活动</a>
-								</li>
-								<li>
-									<a href="#">学科竞赛</a>
-								</li>
-								<li>
-									<a href="#">学术讲座</a>
-								</li>
-								<li>
-									<a href="#">社会实践</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+				<a href="" id="user-info-edit-btn">
 					
-				</div>
+				</a>
 
 				<h3>
 					<i class="fa fa-angle-double-right"></i>
-					<span>素拓申报</span>
+					<span>学生个人信息</span>
 				</h3>
 
 			</div>
 
+			<form action="php/service.php" method="post" id="user-info-form">
+				<button class="btn" type="submit">
+					<i class="fa fa-save"></i>
+					<span>保存</span>
+				</button>
 
-			<!-- 内容展示区 -->
-			<div id="st-declaration-display">
-
-				<ol style="padding-left: 25px;margin-bottom: 0;">
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>信息学院</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-					<li>
-						<span>&nbsp;图书馆雅风xAIESEC人生体验馆</span>
-						<span>图书馆</span>
-						<span>2019-3-18</span>
-						<span><button class="btn">申报</button></span>
-						<ul>
-							<li>活动名称：</li>
-							<li>活动时间：</li>
-							<li>主办方：</li>
-							<li>活动类型：</li>
-							<li>素拓类型：</li>
-							<li>获得学分：</li>
-						</ul>
-					</li>
-				</ol>
-			</div><!-- 内容展示区End -->
-
-
-
-
-
-
-
-			<table id="st-declaration-display" style="display: none;">
+				<table id="user-info-display">
 				<tr>
-					<th>活动序号</th>
-					<th>活动名称</th>
-					<th>主办单位</th>
-					<th>活动时间</th>
-					<th>活动类型</th>
-					<th>操作</th>
+					<th>
+						学号/账号：
+					</th>
+					<td style="padding-right: 170px;">
+						15251101251
+					</td>
+					<th>
+						姓名：
+					</th>
+					<td>
+						冼升敏
+					</td>
 				</tr>
 
 				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
+					<th>
+						密码：
+					</th>
+					<td>
+						<input class="form-control" type="password" name="password" value="12345" autocomplete="off">
+					</td>
+					<th>
+						确认密码：
+					</th>
+					<td>
+						<input class="form-control" type="password" name="password" value="12345" autocomplete="off">
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						性别：
+					</th>
+					<td>
+						<select name="sex" value="">
+							<option value="女">女</option>				
+							<option value="男">男</option>
+						</select>
+					</td>
+					<th>
+						年龄：
+					</th>
+					<td>
+						<input class="form-control" type="number" name="user-name" value="22">
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						单位：
+					</th>
+					<td>
+						<input class="form-control" type="text" name="user-name" value="信息学院" autocomplete="off">
+					</td>
+					<th>
+						年级：
+					</th>
+					<td>
+						<input class="form-control" type="number" name="user-name" value="2015" autocomplete="off">
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						专业：
+					</th>
+					<td>
+						<input class="form-control" type="text" name="user-name" value="信息管理与信息系统" autocomplete="off">
+					</td>
+					<th>
+						行政班：
+					</th>
+					<td>
+						<input class="form-control" type="text" name="user-name" value="信息管理与信息系统2班" size="27" autocomplete="off">
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						籍贯：
+					</th>
+					<td>
+						<input class="form-control" type="text" name="user-name" value="广东广州" autocomplete="off">
+					</td>
+					<th>
+						民族：
+					</th>
+					<td>
+						<select name="nation" value="">
+							<option value="汉族">汉族</option>
+							<option value="汉族">壮族</option>
+							<option value="满族">满族</option>
+							<option value="回族">回族</option>
+							<option value="苗族">苗族</option>
+							<option value="维吾尔族">维吾尔族</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						政治面貌：
+					</th>
+					<td>
+						<select name="political-status" value="">
+							<option value="共青团员">共青团员</option>
+							<option value="中共党员">中共党员</option>
+							<option value="中共预备党员">中共预备党员</option>
+							<option value="群众">群众</option>
+						</select>
+					</td>
+					<th>
+						学制：
+					</th>
+					<td>
+						<select name="school-system" value="">
+							<option value="4年">4年</option>
+							<option value="3年">3年</option>
+							<option value="2年">2年</option>
+							<option value="1年">1年</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						身份证号：
+					</th>
+					<td>
+						<input class="form-control" type="text" name="user-name" value="123456789987654321" autocomplete="off">
+					</td>
+					<th>
+						联系方式：
+					</th>
+					<td>
+						<input class="form-control" type="text" name="user-name" value="22222222222" autocomplete="off">
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						电子邮箱：
+					</th>
+					<td colspan="3">
+						<input class="form-control" type="text" name="user-name" value="22222222222@qq.com"  autocomplete="off">
+						
+					</td>
 					
 				</tr>
 
 				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
+					<th>
+						家庭地址：
+					</th>
+					<td colspan="3">
+						<input class="form-control" type="text" name="user-name" value="广东财经大学" autocomplete="off">
+					</td>
 				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
-				<tr>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td>hh</td>
-					<td><button class="btn">申报</button></td>
-				</tr>
-
 				
 			</table>
 
-			<!-- 翻页 -->
-			<nav style="position: absolute; bottom: 20px; right: 50%; transform: translate(50%)">
-				<ul class="pagination pagination-sm" style="height: 2px;">
-					<li>
-						<a href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li><a href="#">1</a></li>
-					<li>
-						<a href="#" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-				</ul>
-			</nav><!-- 翻页End -->
+			</form>
 
-
+			
 		</div>
 	</div>
 
@@ -548,6 +436,7 @@
 </div>
 
 
+
 <footer>
     <div class="footer" style="width: 100%; background: #006871; margin-top: 5px; box-shadow: 0 -7px 20px 0 rgba(28,31,33,.1); position: relative; color: #cbe3e6;">
         
@@ -561,8 +450,7 @@
 </footer>
 
 
-
-<script src="js/st-declaration.js"></script>
+<script src="js/user-info.js"></script>
 
 
 </body>

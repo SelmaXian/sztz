@@ -1,0 +1,79 @@
+/*内容框的高度*/
+#feature-item-info {
+	min-height: 464px;
+	position: relative;
+	padding-bottom: 63px;
+}
+
+
+/*功能键灰色*/
+#feature-item ul li a, #feature-item ul li a span {
+	color: #DADADA;
+}
+
+
+
+/*功能区标题*/
+#feature-item-info div h3 {
+	font-size: 18px;
+	font-weight: 550;
+	margin: 13px 30px 15px 35px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #DADADA;
+}
+#feature-item-info h3 i {
+	font-size: 23px;
+	margin: 15px 0px 13px 0;	
+	padding-right: 5px;
+}
+
+#statistical-info-edit {
+	float: right;
+	font-size: 14px;
+	color: #9D9D9D;
+	margin: 20px;
+	padding-right: 10px;
+}
+#statistical-info-edit {text-decoration: none;}
+#statistical-info-edit:hover {
+	color: #FA7D3C;
+}
+
+/*展示区列表隐藏*/
+.statistical-display-item>li>ul{
+    display: none;
+}
+/*隐藏内容区*/
+.statistical-display-item li li {
+	position: relative;
+	left: -20px;
+	list-style: none;
+	color: gray;
+    font-size: 14px;
+    padding: 3px;
+    margin: 5px 0;
+}
+/*一级菜单区*/
+.statistical-display-item>li {
+    border-bottom: 1px dashed #DADADA;
+    padding: 10px;
+    padding-right: 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+/*审核状态小icon*/
+.statistical-display-item>li span {
+    float: right;
+    font-size: 12px;
+    color: #D0D0D0;
+}
+
+
+/*展示区单独滚动，隐藏滚动条*/
+#statistical-display {
+	max-height: 365px;
+	overflow-y: scroll;
+}
+#statistical-display::-webkit-scrollbar {
+	width:0;
+}

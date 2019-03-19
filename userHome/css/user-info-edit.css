@@ -1,0 +1,33 @@
+/*行间距*/
+#user-info-display tr>td {
+	padding: 5px 25px;
+}
+#user-info-display tr>td>input {
+	height: 28px;
+}
+
+#feature-item-info {
+	position: relative;
+}
+
+/*保存按钮*/
+#user-info-form>button {
+	position: absolute;
+	top: 11px;
+	right: 30px;
+	background: #006871;
+	font-size: 15px;
+	color: white;
+}
+#user-info-form>button:hover {
+	background: rgb(239,150,50);
+	color: white;
+}
+/*下拉菜单*/
+#user-info-form select {
+	border-radius: 4px;
+	height: 28px;
+	border-color: #CCCCCC;
+	padding: 0 4px 0 8px;
+	color: #555;
+}
