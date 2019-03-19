@@ -8,8 +8,8 @@ if($_POST) {
 		// php的变量都由$打头
 		// 将name为userId的表单元素的值（value）赋给变量$user_id
 		// htmlspecialchars表示采用对数据库安全的格式转换一些特殊的HTML实体
-		$user_id = htmlspecialchars($_POST['userId']);
-		$user_name = $_POST['userName'];
+		$user_id = htmlspecialchars($_POST['user_id']);
+		$user_name = $_POST['user_name'];
 		$password = htmlspecialchars($_POST['password']);
 
 		// 查询语句，用以查询数据库

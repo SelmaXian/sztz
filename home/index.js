@@ -80,16 +80,16 @@ $('#btn-register').click(function() {
 			}else if (json.status == "success") {
 				alert(json.message);
 				cleanInputs();  // 提交成功后调用清空表单函数清空表单输入域
-				setTimeout('location.href="http://www.baidu.com"', 2000);
+				setTimeout("location.href='../userHome/index.html'", 1500);
 			}else{alert("Nothing Happened");}
 		}, "json");
 });
 
 // 清空表单函数
 function cleanInputs() {
-	$("#userId").val('');
-	$("#userName").val('');
-	$("#password").val('');
+	$(".userId").val('');
+	$(".userName").val('');
+	$(".password").val('');
 }
 
 function saveReport() { 

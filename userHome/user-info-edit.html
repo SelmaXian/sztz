@@ -119,11 +119,7 @@
 
 
 		<div id="feature-item-info">
-			<div style="">
-				<a href="" id="user-info-edit-btn">
-					
-				</a>
-
+			<div>
 				<h3>
 					<i class="fa fa-angle-double-right"></i>
 					<span>学生个人信息</span>
@@ -131,25 +127,27 @@
 
 			</div>
 
-			<form action="php/service.php" method="post" id="user-info-form">
-				<button class="btn" type="submit">
+			<form action="php/service.php" method="post" id="user-info-form" onsubmit="return saveReport();">
+				<button class="btn" type="submit" id="userInfoSave">
 					<i class="fa fa-save"></i>
 					<span>保存</span>
 				</button>
+				<!-- 隐藏input元素用于验证是否提交 -->
+				<input type="hidden" name="action" value="addData" id="action"/>
 
 				<table id="user-info-display">
 				<tr>
 					<th>
 						学号/账号：
 					</th>
-					<td style="padding-right: 170px;">
-						15251101251
+					<td>	
+						<input id="userId" type="text" name="user_id" value="" class="form-control" size="27" readonly>
 					</td>
 					<th>
 						姓名：
 					</th>
 					<td>
-						冼升敏
+						<input id="userName" type="text" name="user_name" value="" class="form-control" readonly>	
 					</td>
 				</tr>
 
@@ -157,14 +155,20 @@
 					<th>
 						密码：
 					</th>
-					<td>
-						<input class="form-control" type="password" name="password" value="12345" autocomplete="off">
+					<td style="position: relative;">
+						<input id="firstPasswordInput" class="form-control" type="password" name="password" value="" autocomplete="off" onchange="checkOnPassword()" required>
+						<div class="password-error" style="display:none;position: absolute; font-size: 8px;top: 32px;right: 25px;color: #a94442;">
+							两次密码输入不一致
+						</div>
 					</td>
 					<th>
 						确认密码：
 					</th>
-					<td>
-						<input class="form-control" type="password" name="password" value="12345" autocomplete="off">
+					<td style="position: relative;">
+						<input id="secondPasswordInput" class="form-control" type="password" name="password" value="" autocomplete="off" onchange ="checkOnPassword()" required>
+						<div class="password-error" style="display:none;position: absolute; font-size: 8px;top: 32px;right: 25px; color: #a94442;">
+							两次密码输入不一致
+						</div>
 					</td>
 				</tr>
 
@@ -173,7 +177,7 @@
 						性别：
 					</th>
 					<td>
-						<select name="sex" value="">
+						<select id="gender" name="gender" value="" class="form-control">
 							<option value="女">女</option>				
 							<option value="男">男</option>
 						</select>
@@ -182,7 +186,7 @@
 						年龄：
 					</th>
 					<td>
-						<input class="form-control" type="number" name="user-name" value="22">
+						<input id="age" class="form-control" type="number" name="age" value="" pattern="">
 					</td>
 				</tr>
 
@@ -191,13 +195,13 @@
 						单位：
 					</th>
 					<td>
-						<input class="form-control" type="text" name="user-name" value="信息学院" autocomplete="off">
+						<input id="unit" class="form-control" type="text" name="unit" value="" autocomplete="off">
 					</td>
 					<th>
 						年级：
 					</th>
 					<td>
-						<input class="form-control" type="number" name="user-name" value="2015" autocomplete="off">
+						<input id="grade" class="form-control" type="number" name="grade" value="" autocomplete="off" pattern="">
 					</td>
 				</tr>
 
@@ -206,13 +210,13 @@
 						专业：
 					</th>
 					<td>
-						<input class="form-control" type="text" name="user-name" value="信息管理与信息系统" autocomplete="off">
+						<input id="profession" class="form-control" type="text" name="profession" value="" autocomplete="off">
 					</td>
 					<th>
 						行政班：
 					</th>
 					<td>
-						<input class="form-control" type="text" name="user-name" value="信息管理与信息系统2班" size="27" autocomplete="off">
+						<input id="administrativeClass" class="form-control" type="text" name="administrative_class" value="" size="27" autocomplete="off">
 					</td>
 				</tr>
 
@@ -221,13 +225,13 @@
 						籍贯：
 					</th>
 					<td>
-						<input class="form-control" type="text" name="user-name" value="广东广州" autocomplete="off">
+						<input id="birthplace" class="form-control" type="text" name="birthplace" value="" autocomplete="off">
 					</td>
 					<th>
 						民族：
 					</th>
 					<td>
-						<select name="nation" value="">
+						<select id="nationality" name="nationality" value="" class="form-control">
 							<option value="汉族">汉族</option>
 							<option value="汉族">壮族</option>
 							<option value="满族">满族</option>
@@ -243,7 +247,7 @@
 						政治面貌：
 					</th>
 					<td>
-						<select name="political-status" value="">
+						<select id="politicalOutlook" name="political_outlook" value="" class="form-control">
 							<option value="共青团员">共青团员</option>
 							<option value="中共党员">中共党员</option>
 							<option value="中共预备党员">中共预备党员</option>
@@ -254,7 +258,7 @@
 						学制：
 					</th>
 					<td>
-						<select name="school-system" value="">
+						<select id="academicSystem" name="academic_system" value="" class="form-control">
 							<option value="4年">4年</option>
 							<option value="3年">3年</option>
 							<option value="2年">2年</option>
@@ -268,13 +272,13 @@
 						身份证号：
 					</th>
 					<td>
-						<input class="form-control" type="text" name="user-name" value="123456789987654321" autocomplete="off">
+						<input id="identityNum" class="form-control" type="text" name="identity_num" value="" autocomplete="off">
 					</td>
 					<th>
 						联系方式：
 					</th>
 					<td>
-						<input class="form-control" type="text" name="user-name" value="22222222222" autocomplete="off">
+						<input id="phone" class="form-control" type="text" name="phone" value="" autocomplete="off">
 					</td>
 				</tr>
 
@@ -283,7 +287,7 @@
 						电子邮箱：
 					</th>
 					<td colspan="3">
-						<input class="form-control" type="text" name="user-name" value="22222222222@qq.com"  autocomplete="off">
+						<input id="eMail" class="form-control" type="text" name="e_mail" value="" autocomplete="off">
 						
 					</td>
 					
@@ -294,7 +298,7 @@
 						家庭地址：
 					</th>
 					<td colspan="3">
-						<input class="form-control" type="text" name="user-name" value="广东财经大学" autocomplete="off">
+						<input id="address" class="form-control" type="text" name="address" value="" autocomplete="off">
 					</td>
 				</tr>
 				
@@ -450,8 +454,33 @@
 </footer>
 
 
-<script src="js/user-info.js"></script>
+<script src="js/user-info-edit.js"></script>
+<script type="text/javascript">
+	function saveReport() { 
+	// jquery 表单提交 
+	$("#register-form").ajaxSubmit(function(message) { 
+	// 对于表单提交成功后处理，message为提交页面saveReport.htm的返回内容 
+	}); 
 
+	// 取消表单的默认提交动作，让按钮点击事件中的jQuery代码负责发送数据
+	return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转
+
+	}
+
+	// 两次密码不一致红框
+	function checkOnPassword() {
+		if($("#firstPasswordInput").val() !== $("#secondPasswordInput").val()) {
+			$("#firstPasswordInput").parent().addClass('has-error');
+			$("#secondPasswordInput").parent().addClass('has-error');
+			$(".password-error").css('display','block');
+		}
+		else {
+			$("#firstPasswordInput").parent().removeClass('has-error');
+			$("#secondPasswordInput").parent().removeClass('has-error');
+			$(".password-error").css('display','none');
+		}
+	}
+</script>
 
 </body>
 </html>

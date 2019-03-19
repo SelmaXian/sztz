@@ -4,42 +4,44 @@ $(function() {
 		$.getJSON("./php/service.php?action=getUserInfo", function(json) {
 
 			if (json.userInfo.length > 0) {
-				$('#userId').empty();
-				$('#userName').empty();
-				$('#passWord').empty();
-				$('#gender').empty();
-				$('#age').empty();
-				$('#unit').empty();
-				$('#grade').empty();
-				$('#profession').empty();
-				$('#administrativeClass').empty();
-				$('#birthplace').empty();
-				$('#nationality').empty();
-				$("#politicalOutlook").empty();
-				$('#academicSystem').empty();
-				$('#identityNum').empty();
-				$('#phone').empty();
-				$('#eMail').empty();
-				$('#address').empty();
+				$('#userId').attr('value','');
+				$('#userName').attr('value','');
+				$('#firstPasswordInput').attr('value','');
+				$('#secondPasswordInput').attr('value','');
+				$('#gender option :selected').attr('value','');
+				$('#age').attr('value','');
+				$('#unit').attr('value','');
+				$('#grade').attr('value','');
+				$('#profession').attr('value','');
+				$('#administrativeClass').attr('value','');
+				$('#birthplace').attr('value','');
+				$('#nationality option :selected').attr('value','');
+				$("#politicalOutlook option :selected").attr('value','');
+				$('#academicSystem option :selected').attr('value','');
+				$('#identityNum').attr('value','');
+				$('#phone').attr('value','');
+				$('#eMail').attr('value','');
+				$('#address').attr('value','');
 
 				$.each(json.userInfo, function() {
-					$('#userId').text(this["user_id"]);
-					$('#userName').text(this["user_name"]);
-					$('#passWord').text(this["password"]);
-					$('#gender').text(this["gender"]);
-					$('#age').text(this["age"]);
-					$('#unit').text(this["unit"]);
-					$('#grade').text(this["grade"]);
-					$('#profession').text(this["profession"]);
-					$('#administrativeClass').text(this["administrative_class"]);
-					$('#birthplace').text(this["birthplace"]);
-					$('#nationality').text(this["nationality"]);
-					$("#politicalOutlook").text(this["political_outlook"]);
-					$('#academicSystem').text(this["academic_system"]);
-					$('#identityNum').text(this["identity_num"]);
-					$('#phone').text(this["phone"]);
-					$('#eMail').text(this["e_mail"]);
-					$('#address').text(this["address"]);
+					$('#userId').attr('value', this["user_id"]);
+					$('#userName').attr('value', this["user_name"]);
+					$('#firstPasswordInput').attr('value', this["password"]);
+					$('#secondPasswordInput').attr('value', this["password"]);
+					$('#gender option:selected').attr('value', this["gender"]);
+					$('#age').attr('value', this["age"]);
+					$('#unit').attr('value', this["unit"]);
+					$('#grade').attr('value', this["grade"]);
+					$('#profession').attr('value', this["profession"]);
+					$('#administrativeClass').attr('value', this["administrative_class"]);
+					$('#birthplace').attr('value', this["birthplace"]);
+					$('#nationality option:selected').attr('value', this["nationality"]);
+					$("#politicalOutlook option:selected").attr('value',this["political_outlook"]);
+					$('#academicSystem option:selected').attr('value', this["academic_system"]);
+					$('#identityNum').attr('value', this["identity_num"]);
+					$('#phone').attr('value', this["phone"]);
+					$('#eMail').attr('value', this["e_mail"]);
+					$('#address').attr('value', this["address"]);
 					
 				});		
 			}
@@ -62,7 +64,7 @@ $(function() {
 
 		// $.post是jQuery快捷方法，用于向服务器发送数据。
 		// 向action这个url发送数据data，完成以后执行function，向它传入php返回的json格式数据
-		$.post($("#user-info-form").text('action'), data, function(json){
+		$.post($("#user-info-form").attr('action'), data, function(json){
 				// 查看json数据的值，进行条件判断并输出相应值
 				// 具体看php的success函数
 				if (json.status == "fail") {
