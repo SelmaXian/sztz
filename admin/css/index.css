@@ -1,0 +1,243 @@
+
+html {
+	height: auto;
+}
+body {
+	margin: 0;
+	padding:0;
+	font-size: 16px;
+	font-family: "Arial","Hiragino Sans GB", "Helvetica", "sans-serif";
+	min-width: 1080px;
+/*	background: rgb(246,246,246);*/
+
+	/*滚动条样式*/
+	scrollbar-arrow-color: gray; /*上下按钮上三角箭头的颜色*/
+	scrollbar-face-color: #CBCBCB; /*滚动条凸出部分的颜色*/
+	scrollbar-3dlight-color: #CBCBCB; /*滚动条亮边的颜色*/
+	scrollbar-highlight-color: #333; /*滚动条空白部分的颜色*/
+	scrollbar-shadow-color: #CBCBCB; /*滚动条阴影的颜色*/
+	scrollbar-darkshadow-color: gray; /*滚动条强阴影的颜色*/
+	scrollbar-track-color: #CBCBCB; /*滚动条背景颜色*/
+	scroll-behavior:smooth;
+	scrollbar-base-color: #a5a5a5; /*滚动条的基本颜色*/
+	Cursor:url(mouse.cur); /*自定义个性鼠标*/
+	/*以上2项适用与：body、div、textarea、iframe*/
+}
+
+
+::-webkit-scrollbar {  /* 滚动条整体部分 */
+	width:5px;
+}
+::-webkit-scrollbar-button { /* 滚动条两端的按钮 */
+	width:1px;
+	height: 0px;
+/*	background-color: yellow;*/
+}
+::-webkit-scrollbar:horizontal {/* 滚动条整体部分 */
+	height:5px;
+	margin-bottom:2px
+}
+::-webkit-scrollbar-track {  /* 外层轨道 */
+	border-radius: 10px;
+}
+::-webkit-scrollbar-track-piece {  /*内层轨道，滚动条中间部分，也就是滚动条的背后 */
+	background-color: rgb(221,221,221);
+}
+::-webkit-scrollbar-thumb {  /* 滑块 */
+	width:5px;
+	border-radius: 5px;
+	background: rgb(177,177,177);
+}
+::-webkit-scrollbar-corner { /* 边角 */
+	width: 5px;
+	background-color: rgb(221,221,221);
+}
+::-webkit-scrollbar-thumb:hover { /* 鼠标移入滑块 */
+	background: #909090;
+}
+
+
+
+
+/*页眉*/
+header {
+	display: block;
+	height: 80px;
+	width: 100%;
+	min-width: 1080px;	
+}
+
+.head-container {
+	display: flex;
+	width:100%;
+	min-width: 1075px;	
+	align-items:center;
+	height: 65px;
+	font-size: 16px;
+	background: white;
+	box-shadow: 0 2px 14px 0 rgba(28,31,33,.2); 
+	z-index: 101;
+}
+/*页面logo*/
+.head-item-logo {
+	width: 200px;
+	margin-left: 5%;
+}
+/*搜索框*/
+.head-item-search {
+	display: flex;
+	flex-grow: 1;
+}
+
+/*用户姓名*/
+.head-item-user {
+	border-right: 1px solid #DADADA; 
+	padding: 5px 20px 5px 50px;
+	color: #F5F5F5;
+	cursor: pointer;
+}
+.head-item-user:hover {
+	color: rgb(250,125,60);
+	text-decoration: none;
+}
+.head-item-user span i{
+	font-size: 16px; 
+}
+.head-item-user span{
+	margin-left: 3px;
+}
+#user-info-check {
+	display: flex; 
+	justify-content: center; 
+	height: 40px; 
+	font-size: 10px;
+}
+.user-info-check-item {
+	text-align: center; 
+	padding:0 15px; 
+	border-right: 1px solid #DADADA;
+}
+.user-info-check-num {
+	font-size:18px;  
+	font-weight: 550;
+}
+.user-info-check-name {
+	color: #9D9D9D;
+}
+
+
+
+
+
+
+/*总栏一整条*/
+.head-item-nav>ul>li {
+	display: inline;
+}
+/*一级导航栏*/
+#navLeft ul {
+	display: flex;
+	align-items: center;
+	height: 65px;
+	margin: 0;
+}
+#navLeft ul li:hover {
+	background: rgb(255,141,60);
+}
+/*隐藏二级菜单*/
+#navLeft ul li ul {
+	display: none;
+}
+/*一级导航栏功能项*/
+#navLeft ul li {
+	padding: 21px 20px;
+	cursor: pointer;
+}
+
+#navLeft ul li a {
+	text-decoration: none;
+	color: white;
+	height: 65px;
+}
+
+
+
+/*右侧信件/设置标记*/
+#navRight ul {
+	display: flex;
+	align-items: center;
+	height: 65px;
+	margin: 0;
+	padding: 0 30px 0 15px;
+}
+#navRight ul li {
+	padding: 0 5px;
+	cursor: pointer; 
+}
+#navRight ul li i:hover {
+	color: rgb(250,125,60);
+}
+#navRight ul li i {
+	font-size: 17px;
+	color: #F5F5F5;
+}
+
+/*登录弹框按钮*/
+#popLoginBox {
+	background: #027e89; 
+	line-height: 20px; 
+	color: white; 
+	padding: 6px 17px; 
+	font-size: 15px;
+}
+/*注册弹框按钮*/
+#popRegisterBox {
+	font-size: 15px; 
+	color: #a3a7a7
+}
+
+
+
+
+
+#sidebar {
+	width: 20%;	
+	display: flex;
+	flex-direction: column;
+	min-height: 550px;	
+}
+
+
+#user-info {
+	height:190px;
+	position: relative;
+	margin: 0 0 13px 13px;
+	background: white;
+	box-shadow: 0 2px 7px 0 rgba(28,31,33,.2);
+	border-radius: 5px;
+
+}
+
+#user-info-bg {
+	width: 100%;
+	height: 40%;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	background: rgb(0,104,113);
+	box-shadow: 0 0 10px 0 rgba(28,31,33,.1);
+}
+
+#user-info-circle {
+	margin: 10px auto; 
+	border-radius:50%;
+	width: 76px; 
+	height:76px; 
+	background: white;
+
+}
+
+#user-info-circle>img {
+	width: 70px; 
+	margin: 3px 3px;
+
+}

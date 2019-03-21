@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>素拓系统</title>
+    <link rel="icon" href="../logo/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!-- 字体图标库 -->
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
+    <!-- 新 Bootstrap 核心 CSS 文件 --> 
+    <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
+    <!-- jQuery文件, 务必在bootstrap.min.js 之前引入 --> 
+    <script src="../jquery-3.3.1.js"></script> 
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 --> 
+    <script src="../bootstrap-3.3.7/js/bootstrap.js"></script>
+    <!-- 表单提交的form插件 -->
+    <script src="../jquery.form.js"></script>
+
+
+
+</head>
+<body>
+
+<header>
+    <!-- 页眉 -->
+    <div class="head-container" style="background: #006871">
+        <div class="head-item-logo">
+            <a href="../home/index.html"><img src="../logo/title_white.png" style=" height: 40px;"></a>
+        </div>
+
+        <div id="navLeft" class="head-item-nav">
+            <ul>
+                <li>
+                    <a href="../home/index.html">首页</a>
+                </li>
+                <li>
+                    <a href="#">审核</a>
+                    <ul>
+                        <li>
+                            <a href="">素拓审核</a>
+                        </li>
+                        <li>
+                            <a href="">证书审核</a>
+                        </li>
+                        <li>
+                            <a href="">查看附件</a>
+                        </li>
+                    </ul>                   
+                </li>
+                <li>
+                    <a href="#">更新</a>
+                    <ul>
+                        <li>
+                            <a href="">上传活动</a>
+                        </li>
+                        <li>
+                            <a href="">更新活动照片</a>
+                        </li>
+                        <li>
+                            <a href="">更新学校通知</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="head-item-search">
+            <!-- <input type="text" name="search" class="form-control" placeholder="搜索活动..." style="color: #F5F5F5;"> -->
+
+        </div>
+
+        <div>
+            <a class="head-item-user" href="index.html" title="个人中心">
+                <i class="fa fa-user-circle-o" style=""></i>
+                <span class="user-name">admin</span>
+            </a>
+        </div>
+
+        <div id="navRight" class="head-item-nav">   
+
+            <ul>
+                <li><i class="fa fa-envelope"></i></li>
+                <li><i class="fa fa-cog"></i></li>
+            </ul>
+        </div>          
+    </div><!-- 页眉End -->
+
+</header>
+
+
+<div id="page-wrapper" >
+
+
+    <div id="sidebar">
+            
+        <div id="user-info">
+            <!-- 头像下的遮罩 -->
+            <div id="user-info-bg"></div>
+                    
+            <div style="position: absolute; margin: 10px auto; width: 100%; top: 0">
+                <!-- 头像外边的圆框 -->
+                <div id="user-info-circle" style="">
+                                
+                    <img src="../logo/student.png" class="img-circle" style="">
+                </div>
+
+                <p style="text-align: center; font-size: 14px; margin-bottom: 5px;">
+                    <span class="user-name">冼升敏</span>
+                    <i class="fa fa-graduation-cap" id="dentity-student" style="display: "></i>
+
+                    <i class="fa fa-cogs" id="dentity-admin" style="display: none"></i>
+                        
+                    </span>
+                </p>
+                
+                <!-- 审核数量 -->
+                <div id="user-info-check" style="">
+                    <div class="user-info-check-item">
+                        <span id="pending-check-num" class="user-info-check-num">5</span>
+                        <p class="user-info-check-name">待审核</p>
+                    </div>
+                    <div class="user-info-check-item">
+                        <span id="already-check-num" class="user-info-check-num">25</span>
+                        <p class="user-info-check-name">已审核</p>
+                    </div>
+                    <div class="user-info-check-item" style="border-right: none;">
+                        <span id="no-pass-num"  class="user-info-check-num">0</span>
+                        <p class="user-info-check-name">未通过</p>
+                    </div>
+                    
+                    
+                </div><!-- 审核数量End -->
+            </div>
+            
+        </div>
+
+    </div>
+
+</div><!-- page-wrapper END -->
+
+
+<footer>
+    <div class="footer" style="width: 100%; background: #006871; margin-top: 5px; box-shadow: 0 -7px 20px 0 rgba(28,31,33,.1); position: relative; color: #cbe3e6;">
+        
+        <div style="width: 80%; margin:auto; padding: 15px 0">
+
+            <p style="text-align: center; margin: 0; font-size: 12px; color: #b7c6c9">© 2019 广东财经大学 版权所有</p>
+        </div>
+        
+    </div>
+
+</footer>    
+
+
+<script src="js/index.js"></script>
+
+
+</body>
+</html>
