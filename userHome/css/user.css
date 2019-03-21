@@ -27,7 +27,6 @@ body {
 
 ::-webkit-scrollbar {  /* 滚动条整体部分 */
 	width:5px;
-	margin-right:2px;
 }
 ::-webkit-scrollbar-button { /* 滚动条两端的按钮 */
 	width:1px;
@@ -43,7 +42,6 @@ body {
 }
 ::-webkit-scrollbar-track-piece {  /*内层轨道，滚动条中间部分，也就是滚动条的背后 */
 	background-color: rgb(221,221,221);
-	border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {  /* 滑块 */
 	width:5px;
@@ -52,12 +50,18 @@ body {
 }
 ::-webkit-scrollbar-corner { /* 边角 */
 	width: 5px;
-	background-color: gray;
+	background-color: rgb(221,221,221);
 }
 ::-webkit-scrollbar-thumb:hover { /* 鼠标移入滑块 */
 	background: #909090;
 }
-
+/*最近的活动滚动+滚动条隐藏*/
+#recent-activites {
+	overflow-y: scroll;
+}
+#recent-activites::-webkit-scrollbar { 
+	width:0; 
+}
 
 
 

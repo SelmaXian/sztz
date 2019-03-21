@@ -119,91 +119,80 @@
 
 		<div id="feature-item-info">
 			<div style="">
-				<a href="upload-file-add.html" id="upload-file-info-edit">
-					<i class="fa fa-plus-circle"></i>
-					<span>添加</span>
-				</a>
-
 				<h3>
 					<i class="fa fa-angle-double-right"></i>
-					<span>已上传</span>
+					<span>上传材料</span>
 				</h3>
 
 			</div>
 
 			<!-- 展示区 -->
-			<div id="upload-file-display" style="margin-left: 35px;margin-right: 30px;">			
+			<div id="upload-file-add" style="margin-left: 35px;margin-right: 30px;" >	
 
-				<ol class="upload-file-display-item">
-				    <li>公益活动证明
-				    	<span>2019-3-17</span>
-				        <ul>
-				        	<li>
-								名称：公益活动证明
-							</li>
-							<li>
-								类型：公益活动
-							</li>
-							<li>
-								说明：公益活动证明
-							</li>
-				        </ul>
-				    </li>
-				    <li>学科竞赛作品
-				    	<span>2019-3-17</span>
-				        <ul>
-				        	<li>
-								名称：学科竞赛作品
-							</li>
-							<li>
-								类型：学科竞赛
-							</li>
-							<li>
-								说明：学科竞赛作品
-							</li>
-				        </ul>
-				    </li>
-				    <li>社会实践证明
-				    	<span>2019-3-17</span>
-				        <ul>
-				        	<li>
-								名称：社会实践证明
-							</li>
-							<li>
-								类型：社会实践
-							</li>
-							<li>
-								说明：社会实践证明
-							</li>
-				        </ul>
-				    </li>
-				    
-				</ol>
+			<form action="php/upload-file.php" method="post" id="upload-file" enctype="multipart/form-data" onsubmit="return saveReport();" >
+
+				<!-- 展示区内容控制 -->
+				<div style="text-align: center; width: 600px; margin: 30px auto;">
+				<div class="row form-group">
+					<label for="fileName" class="col-sm-2 control-label">附件名称&nbsp;<span>*</span></label>
+					<div class="col-sm-9">
+						<input id="fileName" class="form-control col-sm-9" type="text" name="file_name" autocomplete="off" required>
+					</div>
+				</div>
+				
+				<div class="row form-group">
+					<label for="fileName" class="col-sm-2 control-label">附件类型&nbsp;<span>*</span></label>
+					<div class="col-sm-9">
+						<select id="fileType" class="form-control" type="text" name="file_type" required style="padding-left: 9px">
+							<option value="">请选择附件类型</option>
+							<option value="公益活动">公益活动</option>
+							<option value="社团活动">社团活动</option>
+							<option value="学科竞赛">学科竞赛</option>
+							<option value="学术讲座">学术讲座</option>
+							<option value="社会实践">社会实践</option>
+							<option value="证书经历">证书经历</option>
+						</select>
+					</div>
+				</div>
+
+				<div  class="row form-group">				
+					<label for="fileName" class="col-sm-2 control-label">附件选择&nbsp;<span>*</span></label>
+					<div class="input-group col-sm-9" style="padding:0 15px;">
+					      <input id="filePath" class="form-control" type="text" autocomplete="off" required placeholder="支持*.doc,*.docx,*.pdf,*.txt; 限制10MB">
+					      <span id="browseBtn" style="cursor:pointer;" onclick="$('input[id=fileUpload]').click();" class="input-group-addon">
+					      <i class="glyphicon glyphicon-folder-open"></i>   浏览文件</span>						      
+					</div>
+					<input id="fileUpload" name="file" style="display:none" type="file" accept=".doc,.docx,.pdf,.txt"  onchange="fileChange(this);">
+				</div>
+				
+				<div class="row form-group">
+					<label for="fileName" class="col-sm-2 control-label" style="margin-top: 15px;">附件说明&nbsp;&nbsp;</label>
+					<div class="col-sm-9" style="">
+						<textarea id="fileName" type="text" name="file_name" autocomplete="off" class="form-control" style="resize: none;"></textarea>
+					</div>
+				</div>	
+
+
+
+				<button class="btn" type="submit" id="upload">
+					<i class="fa fa-cloud-upload"></i>
+					<span>&nbsp;提交</span>
+				</button>
+				<button class="btn" type="reset" id="resetBtn">
+					<i class="fa fa-repeat"></i>
+					<span>&nbsp;重置</span>
+				</button>
+				<!-- 隐藏input元素用于验证是否提交 -->
+				<input type="hidden" name="action" value="addData" id="action"/>
+
+
+				</div><!-- 展示区内容控制End -->
+					
+				
+			</form>
 
 			</div>
 			<!-- 展示区end -->
-
-
-
-				
-
-
-			<!-- 翻页 -->
-			<nav style="position: absolute; bottom: 20px; right: 50%; transform: translate(50%)">
-				<ul class="pagination pagination-sm" style="height: 2px;">
-					<li>
-						<a href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li><a href="#">1</a></li>
-					<li>
-						<a href="#" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-				</ul>
-			</nav><!-- 翻页End -->
 
 
 		</div>
@@ -253,9 +242,9 @@
 		</div>
 
 
-		<div id="recent-activites">
+		<div id="recent-activites" style="">
 			
-			<ul style="">
+			<ul>
 				<li style="">
 					<span id="recent-item-title" style="font-weight:bold; padding-bottom: 13px;">最近的活动</span>
 				</li>
@@ -354,6 +343,75 @@
 
 
 <script src="js/upload-file.js"></script>
+<script type="text/javascript">
+	function saveReport() { 
+	// jquery 表单提交 
+	$("#register-form").ajaxSubmit(function(message) { 
+	// 对于表单提交成功后处理，message为提交页面saveReport.htm的返回内容 
+	}); 
+
+	// 取消表单的默认提交动作，让按钮点击事件中的jQuery代码负责发送数据
+	return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转
+
+	}
+
+	$("#fileUpload").change(function () {
+        $("#filePath").val($("#fileUpload").val());
+    });
+
+    var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
+    function fileChange(target,id) {
+        var fileSize = 0;
+        // var filetypes =[".jpg",".png",".rar",".txt",".zip",".doc",".ppt",".xls",".pdf",".docx",".xlsx"];
+        var filetypes =[".txt",".doc",".pdf",".docx"];
+        var filepath = target.value;
+        var filemaxsize = 1024*10;//10M
+        if(filepath){
+            var isnext = false;
+            var fileend = filepath.substring(filepath.lastIndexOf("."));
+            if(filetypes && filetypes.length>0){
+                for(var i =0; i<filetypes.length;i++){
+                    if(filetypes[i]==fileend){
+                        isnext = true;
+                        break;
+                    }
+                }
+            }
+            if(!isnext){
+                alert("不接受此文件类型！");
+                target.value ="";
+                return false;
+            }
+        }else{
+            return false;
+        }
+        if (isIE && !target.files) {
+            var filePath = target.value;
+            var fileSystem = new ActiveXObject("Scripting.FileSystemObject");
+            if(!fileSystem.FileExists(filePath)){
+                alert("附件不存在，请重新输入！");
+                return false;
+            }
+            var file = fileSystem.GetFile (filePath);
+            fileSize = file.Size;
+        } else {
+            fileSize = target.files[0].size;
+        }
+ 
+        var size = fileSize / 1024;
+        if(size>filemaxsize){
+            alert("附件大小不能大于"+filemaxsize/1024+"MB！");
+            target.value ="";
+            return false;
+        }
+        if(size<=0){
+            alert("附件大小不能为0M！");
+            target.value ="";
+            return false;
+        }
+    }
+
+</script>
 
 
 </body>

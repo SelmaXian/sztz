@@ -11,9 +11,6 @@
 	color: #DADADA
 }
 
-
-
-
 #feature-item-info div h3 {
 	font-size: 18px;
 	font-weight: 550;
@@ -76,4 +73,39 @@
 }
 #upload-file-display::-webkit-scrollbar {
 	width:0;
+}
+
+/*提交按钮*/
+#upload {
+	width: 425px;
+	background: #006871;
+	font-size: 16px;
+	color: white;
+	margin: 15px;
+}
+#upload:hover {
+	background: rgb(239,150,50);
+	color: white;
+}
+/*重置按钮*/
+#resetBtn {
+	width: 425px;
+	font-size: 16px;
+	color: gray;
+}
+#resetBtn:hover, #browseBtn:hover {
+	background: #CCC;
+	color: #333;
+}
+
+.form-group {
+	margin: 20px 0;
+}
+.control-label {
+	margin-top: 7px;
+	font-size: 15px;
+}
+/*必填副号*红色显示*/
+.control-label span {
+	color: red;
 }

@@ -8,36 +8,37 @@ $(function() {
 				$('#userName').attr('value','');
 				$('#firstPasswordInput').attr('value','');
 				$('#secondPasswordInput').attr('value','');
-				$('#gender option :selected').attr('value','');
+				$('#gender').val('');
 				$('#age').attr('value','');
 				$('#unit').attr('value','');
 				$('#grade').attr('value','');
 				$('#profession').attr('value','');
 				$('#administrativeClass').attr('value','');
 				$('#birthplace').attr('value','');
-				$('#nationality option :selected').attr('value','');
-				$("#politicalOutlook option :selected").attr('value','');
-				$('#academicSystem option :selected').attr('value','');
+				$('#nationality').val('');
+				$('#politicalOutlook').val('');
+				$('#academicSystem').val('');
 				$('#identityNum').attr('value','');
 				$('#phone').attr('value','');
 				$('#eMail').attr('value','');
 				$('#address').attr('value','');
 
 				$.each(json.userInfo, function() {
+
 					$('#userId').attr('value', this["user_id"]);
 					$('#userName').attr('value', this["user_name"]);
 					$('#firstPasswordInput').attr('value', this["password"]);
 					$('#secondPasswordInput').attr('value', this["password"]);
-					$('#gender option:selected').attr('value', this["gender"]);
+					$('#gender').val(this['gender']);
 					$('#age').attr('value', this["age"]);
 					$('#unit').attr('value', this["unit"]);
 					$('#grade').attr('value', this["grade"]);
 					$('#profession').attr('value', this["profession"]);
 					$('#administrativeClass').attr('value', this["administrative_class"]);
 					$('#birthplace').attr('value', this["birthplace"]);
-					$('#nationality option:selected').attr('value', this["nationality"]);
-					$("#politicalOutlook option:selected").attr('value',this["political_outlook"]);
-					$('#academicSystem option:selected').attr('value', this["academic_system"]);
+					$('#nationality').val(this["nationality"]);
+					$("#politicalOutlook").val(this["political_outlook"]);
+					$('#academicSystem').val(this["academic_system"]);
 					$('#identityNum').attr('value', this["identity_num"]);
 					$('#phone').attr('value', this["phone"]);
 					$('#eMail').attr('value', this["e_mail"]);
@@ -71,7 +72,7 @@ $(function() {
 					alert(json.message);
 				}else if (json.status == "success") {
 					alert(json.message);
-				}else{alert("再试一次..");}
+				}else{toastr.success("再试一次...");}
 			}, "json");
 	});
 
@@ -79,6 +80,20 @@ $(function() {
 	$("#user-info-form").submit(function() {
 		return false;
 	});	
+
+
+	// 密码显示/隐藏
+	$(".passwordHide").on("click", ".fa-eye-slash", function () {
+	    $(this).removeClass("fa-eye-slash").addClass("fa-eye");
+	    $(this).next().attr("type", "text");
+	});
+	 
+	$(".passwordHide").on("click", ".fa-eye", function () {
+	    $(this).removeClass("fa-eye").addClass("fa-eye-slash");
+	    $(this).next().attr("type", "password");
+	});
+
+	
 
 });
 

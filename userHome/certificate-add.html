@@ -5,7 +5,7 @@
 	<title>素拓系统</title>
 	<link rel="icon" href="../logo/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/user.css">
-	<link rel="stylesheet" type="text/css" href="css/upload-file.css">
+	<link rel="stylesheet" type="text/css" href="css/certificate.css">
 
 	<!-- 字体图标库 -->
 	<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
@@ -96,14 +96,14 @@
 				</li>
 				<li id="func-certificate" style=" ">
 					<a href="certificate.html">
-						<i class="fa fa-pencil-square"></i>
-						<span>证书经历</span>
+						<i class="fa fa-pencil-square" style="color: #FF7400;"></i>
+						<span style="color: #FF7400; font-weight: 700;">证书经历</span>
 					</a>
 				</li>
 				<li id="func-upload-file" style=" ">
 					<a href="upload-file.html">
-						<i class="fa fa-folder-open" style="color: #da3d78;"></i>
-						<span style="color: #da3d78; font-weight: 700;">上传材料</span>
+						<i class="fa fa-folder-open"></i>
+						<span>上传材料</span>
 					</a>
 				</li>
 				<li id="func-statistical" style="color: ">
@@ -119,91 +119,94 @@
 
 		<div id="feature-item-info">
 			<div style="">
-				<a href="upload-file-add.html" id="upload-file-info-edit">
-					<i class="fa fa-plus-circle"></i>
-					<span>添加</span>
-				</a>
-
 				<h3>
 					<i class="fa fa-angle-double-right"></i>
-					<span>已上传</span>
+					<span>证书经历</span>
 				</h3>
 
 			</div>
 
 			<!-- 展示区 -->
-			<div id="upload-file-display" style="margin-left: 35px;margin-right: 30px;">			
+			<div id="upload-file-add" style="margin-left: 35px;margin-right: 30px;" >	
 
-				<ol class="upload-file-display-item">
-				    <li>公益活动证明
-				    	<span>2019-3-17</span>
-				        <ul>
-				        	<li>
-								名称：公益活动证明
-							</li>
-							<li>
-								类型：公益活动
-							</li>
-							<li>
-								说明：公益活动证明
-							</li>
-				        </ul>
-				    </li>
-				    <li>学科竞赛作品
-				    	<span>2019-3-17</span>
-				        <ul>
-				        	<li>
-								名称：学科竞赛作品
-							</li>
-							<li>
-								类型：学科竞赛
-							</li>
-							<li>
-								说明：学科竞赛作品
-							</li>
-				        </ul>
-				    </li>
-				    <li>社会实践证明
-				    	<span>2019-3-17</span>
-				        <ul>
-				        	<li>
-								名称：社会实践证明
-							</li>
-							<li>
-								类型：社会实践
-							</li>
-							<li>
-								说明：社会实践证明
-							</li>
-				        </ul>
-				    </li>
-				    
-				</ol>
+			<form action="php/upload-file.php" method="post" id="upload-file" enctype="multipart/form-data" onsubmit="return saveReport();" >
+
+				<!-- 展示区内容控制 -->
+				<div style="text-align: center; width: 600px; margin: 30px auto;">
+				<div class="row form-group">
+					<label for="certificateName" class="col-sm-2 control-label">证书名称&nbsp;<span>*</span></label>
+					<div class="col-sm-9">
+						<input id="certificateName" class="form-control col-sm-9" type="text" name="certificate_name" autocomplete="off" required>
+					</div>
+				</div>
+
+				<div class="row form-group">
+					<label for="certificateNum" class="col-sm-2 control-label">证书编号&nbsp;<span>*</span></label>
+					<div class="col-sm-9">
+						<input id="certificateNum" class="form-control col-sm-9" type="text" name="certificate_num" autocomplete="off" required>
+					</div>
+				</div>
+				
+				<div class="row form-group">
+					<label for="certificateType" class="col-sm-2 control-label">证书类型&nbsp;<span>*</span></label>
+					<div class="col-sm-9">
+						<select id="certificateType" class="form-control" type="text" name="certificate_type" required style="padding-left: 9px">
+							<option value="">请选择证书类型</option>
+							<option value="计算机等级证书">计算机等级证书</option>
+							<option value="英语能力证书">英语能力证书（如CET4/6、托福（TOEFL）成绩证书、雅思（IELTS）成绩证书、英语中高级口译资格证书）</option>
+							<option value="IT能力证书">IT能力证书（如全国计算机软件专业技术资格和水平证书、ACCP软件工程师、微软系统管理员（MCSA）证书）</option>
+							<option value="职业资格证书">职业资格证书（如教师资格证书、报关员证书、国家司法考试证书、导游资格证书、公务员证书）</option>
+							<option value="其他证书">其他证书</option>
+						</select>
+					</div>
+				</div>
+
+<!-- 				<div  class="row form-group">				
+					<label for="fileName" class="col-sm-2 control-label">附件选择</label>
+					<div class="input-group col-sm-9" style="padding:0 15px;">
+					      <input id="filePath" class="form-control" type="text" autocomplete="off" placeholder="电子版(可选), 支持*.jpg,*.png,*.pdf; 限制5MB">
+					      <span id="browseBtn" style="cursor:pointer;" onclick="$('input[id=fileUpload]').click();" class="input-group-addon">
+					      <i class="glyphicon glyphicon-folder-open"></i>   浏览文件</span>						      
+					</div>
+					<input id="fileUpload" name="file" style="display:none" type="file" accept=".jpg,.png,.pdf"  onchange="fileChange(this);">
+				</div> -->
+				
+				<div class="row form-group">
+					<label for="certificateOwner" class="col-sm-2 control-label">持 &nbsp;有 &nbsp;人&nbsp;<span>*</span></label>
+					<div class="col-sm-9">
+						<input id="certificateOwner" class="form-control col-sm-9" type="text" name="certificate_owner" autocomplete="off" required>
+					</div>
+				</div>
+
+				<div class="row form-group">
+					<label for="identityNum" class="col-sm-2 control-label">证件号码&nbsp;<span>*</span></label>
+					<div class="col-sm-9">
+						<input id="identityNum" class="form-control col-sm-9" type="text" name="identity_num" autocomplete="off" required>
+					</div>
+				</div>	
+
+
+
+				<button class="btn" type="submit" id="upload">
+					<i class="fa fa-cloud-upload"></i>
+					<span>&nbsp;上传</span>
+				</button>
+				<button class="btn" type="reset" id="resetBtn">
+					<i class="fa fa-repeat"></i>
+					<span>&nbsp;重置</span>
+				</button>
+				<!-- 隐藏input元素用于验证是否提交 -->
+				<input type="hidden" name="action" value="addData" id="action"/>
+
+
+				</div><!-- 展示区内容控制End -->
+					
+				
+			</form>
 
 			</div>
 			<!-- 展示区end -->
-
-
-
-				
-
-
-			<!-- 翻页 -->
-			<nav style="position: absolute; bottom: 20px; right: 50%; transform: translate(50%)">
-				<ul class="pagination pagination-sm" style="height: 2px;">
-					<li>
-						<a href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li><a href="#">1</a></li>
-					<li>
-						<a href="#" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-				</ul>
-			</nav><!-- 翻页End -->
+			
 
 
 		</div>
@@ -339,6 +342,7 @@
 </div>
 
 
+
 <footer>
     <div class="footer" style="width: 100%; background: #006871; margin-top: 5px; box-shadow: 0 -7px 20px 0 rgba(28,31,33,.1); position: relative; color: #cbe3e6;">
         
@@ -352,8 +356,64 @@
 </footer>
 
 
+<script src="js/certificate.js"></script>
+<script>
+		$("#fileUpload").change(function () {
+        $("#filePath").val($("#fileUpload").val());
+    });
 
-<script src="js/upload-file.js"></script>
+    var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
+    function fileChange(target,id) {
+        var fileSize = 0;
+        var filetypes =[".jpg",".png",".pdf"];
+        var filepath = target.value;
+        var filemaxsize = 1024*5;//5M
+        if(filepath){
+            var isnext = false;
+            var fileend = filepath.substring(filepath.lastIndexOf("."));
+            if(filetypes && filetypes.length>0){
+                for(var i =0; i<filetypes.length;i++){
+                    if(filetypes[i]==fileend){
+                        isnext = true;
+                        break;
+                    }
+                }
+            }
+            if(!isnext){
+                alert("不接受此文件类型！");
+                target.value ="";
+                return false;
+            }
+        }else{
+            return false;
+        }
+        if (isIE && !target.files) {
+            var filePath = target.value;
+            var fileSystem = new ActiveXObject("Scripting.FileSystemObject");
+            if(!fileSystem.FileExists(filePath)){
+                alert("附件不存在，请重新输入！");
+                return false;
+            }
+            var file = fileSystem.GetFile (filePath);
+            fileSize = file.Size;
+        } else {
+            fileSize = target.files[0].size;
+        }
+ 
+        var size = fileSize / 1024;
+        if(size>filemaxsize){
+            alert("附件大小不能大于"+filemaxsize/1024+"MB！");
+            target.value ="";
+            return false;
+        }
+        if(size<=0){
+            alert("附件大小不能为0M！");
+            target.value ="";
+            return false;
+        }
+    }
+
+</script>
 
 
 </body>

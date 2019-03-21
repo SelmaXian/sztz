@@ -19,5 +19,18 @@ $(function() {
             $(this).find("ul").toggle(500);
         }
     });
+
+    $(".btn").click(function() {
+    	// 获取活动序号
+    	var stId = $(this).parent().parent().children("ul").children("li").eq(0).children("span").text();
+    	// console.log($(this).parent().parent().children("ul").children(".activities-id").text());
+    	// 隐藏展示区，显示申报区
+    	$(this).parent().parent().parent().parent().css('display','none');
+    	$("nav").css('display','none');
+    	$("#st-declaration-classify").css('display','none');
+    	$("#stDeclare").css('display','block');
+
+    	$("#stDeclareDiv1").children(".st-declare-item").children("ul").children("li").eq(0).append(stId);
+    });
 	
 });

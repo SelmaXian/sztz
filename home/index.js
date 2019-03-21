@@ -49,7 +49,7 @@ $("#loginCover").click(function closeLoginBox() {
 });
 
 
-
+// 密码显示/隐藏
 $(".passwordHide").on("click", ".fa-eye-slash", function () {
     $(this).removeClass("fa-eye-slash").addClass("fa-eye");
     $(this).next().attr("type", "text");

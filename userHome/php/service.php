@@ -61,7 +61,7 @@ if($_GET){
 		// 遍历数组，并将结果（也是一个关联数组）赋给$row
 		while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 			// 使用键访问关联数组中的元素，赋给新建数组$userInfo中的属性
-			array_push($userInfo, array('user_id'=>$row['user_id'], 'user_name'=>$row['user_name'],'password'=>$row['password'], 'gender'=>$row['gender'], 'age'=>$row['age'], 'unit'=>$row['unit'], 'grade'=>$row['grade'], 'profession'=>$row['profession'], 'administrative_class'=>$row['administrative_class'], 'birthplace'=>$row['birthplace'], 'nationality'=>$row['nationality'], 'academic_system'=>$row['academic_system'], 'identity_num'=>$row['identity_num'], 'phone'=>$row['phone'], 'e_mail'=>$row['e_mail'], 'address'=>$row['address'])
+			array_push($userInfo, array('user_id'=>$row['user_id'], 'user_name'=>$row['user_name'],'password'=>$row['password'], 'gender'=>$row['gender'], 'age'=>$row['age'], 'unit'=>$row['unit'], 'grade'=>$row['grade'], 'profession'=>$row['profession'], 'administrative_class'=>$row['administrative_class'], 'birthplace'=>$row['birthplace'], 'nationality'=>$row['nationality'], 'political_outlook'=>$row['political_outlook'], 'academic_system'=>$row['academic_system'], 'identity_num'=>$row['identity_num'], 'phone'=>$row['phone'], 'e_mail'=>$row['e_mail'], 'address'=>$row['address'])
 			);
 		}
 		// 将关联数组$userInfo的值赋给userInfo，并转化为json格式的值串

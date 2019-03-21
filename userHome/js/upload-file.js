@@ -8,5 +8,5 @@ $(function () {
         }else{
             $(this).find("ul").toggle(500);
         }
-    })
+    });
 });

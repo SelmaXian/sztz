@@ -22,11 +22,25 @@
 	color: #FA7D3C;
 }
 #user-info-display {
-	margin: 8px 33px;
+	margin: 15px 33px;
+
+}
+#user-info-display tr td {
+	border-bottom: 1px dashed #DADADA;
+	width: 300px;
 }
 #user-info-display tr td, #user-info-display tr th{
 	padding: 8px 25px;
 }
+/*两端对齐*/
+#user-info-display tr th{
+	width: 120px;
+	text-align:center;
+	text-align:justify;
+	text-justify:distribute-all-lines;
+	text-align-last:justify;
+}
+
 
 /*功能键灰色*/
 #feature-item ul li a, #feature-item ul li a span {

@@ -123,43 +123,70 @@
 }
 
 
-/*#st-declaration-display {
-	width: 100.05%;
-	border-radius:5px;
+/*素拓申报弹框*/
+#stDeclare {
+	display: inline-block;
+	margin: 15px 60px;
 }
-#st-declaration-display tr th:first-child {
-	border-top-left-radius: 5px;
+#stDeclare ul {
+	list-style: none;
 }
-#st-declaration-display tr th:last-child {
-	border-top-right-radius: 5px;
-	width: 120px;
+/*相对定位给item*/
+#stDeclareDiv1 {
+	position: relative;
+	height: 182px;
+	margin: 15px 0;
 }
-#st-declaration-display tr th {
-	width: 150px;
-	text-align: center;
-	background: #EDEDED;
-	padding: 10px 0;
-	font-size: 15px;
+#stDeclareDiv2 {
+	position: relative;
+	height: 172px;
 }
-
-#st-declaration-display tr td {
-	border-bottom: 1px dashed #DADADA;
-	padding: 8px 30px;
-	text-align: center;
+/*ul*/
+.st-declare-item {
+	position: absolute;
+	top: 0;
+	left: 149px;/*要等于标题的宽度*/
+	height: 100%;
+	width: 680px;
+	border: 1px dashed #DADADA;
+	padding: 4px 0;
 }
-
-#feature-item ul li a, #feature-item ul li a span {
-	color: #DADADA
-}
-
-#st-declaration-display tr td button {
-
-	height: 27px;
+.st-declare-item li {
 	font-size: 13px;
-	margin: 0;
-	padding: 4.5px 12px;
+	padding: 3px;
+	margin-right: 15px;
+	border-bottom: 1px dotted #DADADA;
 }
-#st-declaration-display tr td button:hover {
-	background: #006871;
-	color: white;
-}*/
+.st-declare-item li:last-child {
+	border-bottom: none;
+}
+.st-declare-item li h5 {
+	font-size: 13px;
+	display: inline;
+	padding: 0;
+	margin: 0;
+	font-weight: 550;
+	margin-right: 5px;
+	letter-spacing: 3px;
+}
+.st-declare-item li input, .st-declare-item li select {
+	display: inline;
+	border: none;
+	height: 20px;
+}
+/*标题样式*/
+.st-declare-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 150px;
+	height: 100%;
+
+	border: 1px dashed #DADADA;
+}
+.st-declare-title h4 {
+	color: #006871;
+	letter-spacing: 1px;
+	font-size: 16px;
+	font-weight: 550;
+}
