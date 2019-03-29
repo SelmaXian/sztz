@@ -5,7 +5,7 @@
     <title>素拓系统</title>
     <link rel="icon" href="../logo/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/check.css">
-    <link rel="stylesheet" type="text/css" href="css/check-file.css">
+    <link rel="stylesheet" type="text/css" href="css/update.css">
 
     <!-- 字体图标库 -->
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
@@ -17,6 +17,8 @@
     <script src="../bootstrap-3.3.7/js/bootstrap.js"></script>
     <!-- 表单提交的form插件 -->
     <script src="../jquery.form.js"></script>
+
+
 
 </head>
 <body>
@@ -139,18 +141,18 @@
                             <i class="fa fa-angle-right"></i>
                         </a>
                     </li>
-                    <li style="background: #F1F1F1;">
+                    <li>
                         <a href="check-st.html">
                             <i class="fa fa-pencil-square" style="color: #2EACB8"></i>
-                            <span style="color: #006871;">审核</span>
-                            <i class="fa fa-angle-right" style="color: #006871;"></i>
+                            <span>审核</span>
+                            <i class="fa fa-angle-right"></i>
                         </a>
                     </li>
-                    <li>
+                    <li style="background: #F1F1F1;">
                         <a href="update.html">
                             <i class="fa fa-refresh" style="color: #ffc029"></i>
-                            <span>更新</span>
-                            <i class="fa fa-angle-right "></i>
+                            <span style="color: #006871;">更新</span>
+                            <i class="fa fa-angle-right" style="color: #006871;"></i>
                         </a>
                     </li>
                     <li>
@@ -177,77 +179,83 @@
         <div style="border-bottom: 2px solid #006871;">
             <ul>
                 <li>
-                    <a href="check-st.html">素拓审核</a>
-                </li>
-                <li>
-                    <a href="check-certificate.html">证书审核</a>                   
+                    <a href="update.html">上传活动</a>
                 </li>
                 <li class="checkActive">
-                    <a href="check-file.html" style="color: white;">查看附件</a>                    
+                    <a href="update-photo.html" style="color: white;">活动照片</a>                   
+                </li>
+                <li>
+                    <a href="">最近的活动</a>                    
                 </li>
 
             </ul>
             
-        </div><!-- title End -->
+        </div>
 
-        <!-- 表格 -->
-        <div>
-            <form id="checkFile" ><!-- method="" action="" -->
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>学生姓名</th>
-                            <th>学号</th>
-                            <th>附件名称</th>
-                            <th>附件类型</th>
-                            <th>附件说明</th>
-                            <th>上传时间</th>
-                            <th>附件下载</th>
-                        </tr>
-                        
-                        <tr>
-                            <td>冼升敏</td>
-                            <td>15251101251</td>
-                            <td style="max-width: 280px;overflow: hidden;">英语四级</td>
-                            <td>公益活动</td>
-                            <td></td>
-                            <td>2019-3-27</td>
-                            <td class="downloadFile">
-                                <i class="fa fa-download" style="cursor:pointer;font-size: 16px;" onclick="$(this).next().click();" title="下载附件"></i>
-                                <button class="btn" type="submit" name="" style="display: none;"></button>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+        
+        <div style="margin: 25px 0 0 25px;color: #999;">
+            <p>说明：该功能是指更新系统首页滚动轮播图中的活动照片</p>
+        </div>
+        <!-- 展示区 -->
+        <div style="margin-left: 35px;margin-right: 30px;" >   
+
+            <form action="php/upload-file.php" method="post" id="upload-file" enctype="multipart/form-data" onsubmit="return saveReport();" >
+
+                <!-- 展示区内容控制 -->
+                <div style="text-align: center; width: 600px; margin: 55px auto;">
+                <div class="row form-group">
+                    <label for="certificateType" class="col-sm-2 control-label">照片位置&nbsp;<span>*</span></label>
+                    <div class="col-sm-9">
+                        <select id="certificateType" class="form-control" type="text" name="certificate_type" required style="padding-left: 9px">
+                            <option value="">请选择新照片要替换的位置</option>
+                            <option value="1">替换第一张</option>
+                            <option value="2">替换第二张</option>
+                            <option value="3">替换第三张</option>
+                            <option value="4">替换第四张</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label for="certificateName" class="col-sm-2 control-label">照片标题&nbsp;<span>*</span></label>
+                    <div class="col-sm-9">
+                        <input id="certificateName" class="form-control col-sm-9" type="text" name="certificate_name" autocomplete="off" placeholder="请输入照片下方要显示的说明内容，如：第十九届IT文化节开幕式" required>
+                    </div>
+                </div>
+
+                <div  class="row form-group">               
+                    <label for="fileName" class="col-sm-2 control-label">照片选择&nbsp;<span>*</span></label>
+                    <div class="input-group col-sm-9" style="padding:0 15px;">
+                          <input id="filePath" class="form-control" type="text" autocomplete="off" required placeholder="支持*.jpg,*.png,*.gif; 限制5MB">
+                          <span id="browseBtn" style="cursor:pointer;" onclick="$('input[id=fileUpload]').click();" class="input-group-addon">
+                          <i class="glyphicon glyphicon-folder-open"></i>   浏览文件</span>                           
+                    </div>
+                    <input id="fileUpload" name="file" style="display:none" type="file" accept=".jpg,.png,.gif"  onchange="fileChange(this);">
+                </div>
+
+
+
+                <button class="btn" type="submit" id="upload">
+                    <i class="fa fa-cloud-upload"></i>
+                    <span>&nbsp;上传</span>
+                </button>
+                <button class="btn" type="reset" id="resetBtn">
+                    <i class="fa fa-repeat"></i>
+                    <span>&nbsp;重置</span>
+                </button>
+                <!-- 隐藏input元素用于验证是否提交 -->
+                <input type="hidden" name="action" value="addData" id="action"/>
+
+
+                </div><!-- 展示区内容控制End -->
+                    
+                
             </form>
-            
-        </div><!-- 表格end -->
+
+        </div><!-- 展示区end -->
 
 
-
-        <!-- 翻页 -->
-        <nav style="position: absolute; bottom: 18px; right: 50%; transform: translate(50%)">
-            <ul class="pagination pagination-sm" style="height: 2px;">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav><!-- 翻页End -->
-
-        
-
-
-        
-    </div>
+    </div><!-- main-wrapper END -->
 
 </div><!-- page-wrapper END -->
 
@@ -266,6 +274,75 @@
 
 
 <script src="js/index.js"></script>
+<script type="text/javascript">
+    function saveReport() { 
+    // jquery 表单提交 
+    $("#register-form").ajaxSubmit(function(message) { 
+    // 对于表单提交成功后处理，message为提交页面saveReport.htm的返回内容 
+    }); 
+
+    // 取消表单的默认提交动作，让按钮点击事件中的jQuery代码负责发送数据
+    return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转
+
+    }
+
+    $("#fileUpload").change(function () {
+        $("#filePath").val($("#fileUpload").val());
+    });
+
+    var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
+    function fileChange(target,id) {
+        var fileSize = 0;
+        // var filetypes =[".jpg",".png",".rar",".txt",".zip",".doc",".ppt",".xls",".pdf",".docx",".xlsx"];
+        var filetypes =[".jpg",".png",".gif"];
+        var filepath = target.value;
+        var filemaxsize = 1024*5;//5M
+        if(filepath){
+            var isnext = false;
+            var fileend = filepath.substring(filepath.lastIndexOf("."));
+            if(filetypes && filetypes.length>0){
+                for(var i =0; i<filetypes.length;i++){
+                    if(filetypes[i]==fileend){
+                        isnext = true;
+                        break;
+                    }
+                }
+            }
+            if(!isnext){
+                alert("不接受此图片类型！");
+                target.value ="";
+                return false;
+            }
+        }else{
+            return false;
+        }
+        if (isIE && !target.files) {
+            var filePath = target.value;
+            var fileSystem = new ActiveXObject("Scripting.FileSystemObject");
+            if(!fileSystem.FileExists(filePath)){
+                alert("图片不存在，请重新输入！");
+                return false;
+            }
+            var file = fileSystem.GetFile (filePath);
+            fileSize = file.Size;
+        } else {
+            fileSize = target.files[0].size;
+        }
+ 
+        var size = fileSize / 1024;
+        if(size>filemaxsize){
+            alert("图片大小不能大于"+filemaxsize/1024+"MB！");
+            target.value ="";
+            return false;
+        }
+        if(size<=0){
+            alert("图片大小不能为0M！");
+            target.value ="";
+            return false;
+        }
+    }
+
+</script>
 
 
 </body>

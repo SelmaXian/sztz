@@ -5,6 +5,7 @@
     <title>素拓系统</title>
     <link rel="icon" href="../logo/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/check.css">
+    <link rel="stylesheet" type="text/css" href="css/update.css">
 
     <!-- 字体图标库 -->
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
@@ -177,11 +178,11 @@
         <!-- title -->
         <div style="border-bottom: 2px solid #006871;">
             <ul>
-                <li>
-                    <a href="index.html">上传活动</a>
+                <li class="checkActive">
+                    <a href="update.html" style="color: white;">上传活动</a>
                 </li>
                 <li>
-                    <a href="">更新活动照片</a>                   
+                    <a href="update-photo.html">活动照片</a>                   
                 </li>
                 <li>
                     <a href="">最近的活动</a>                    
@@ -192,7 +193,116 @@
         </div>
 
         
-    </div>
+
+        <!-- 展示区 -->
+        <div style="margin-left: 35px;margin-right: 30px;" >   
+
+            <form action="php/upload-file.php" method="post" id="upload-file" enctype="multipart/form-data" onsubmit="return saveReport();" >
+
+                <!-- 展示区内容控制 -->
+                <div style="text-align: center; width: 600px; margin: 30px auto;">
+                <div class="row form-group">
+                    <label for="certificateName" class="col-sm-2 control-label">活动序号&nbsp;<span>*</span></label>
+                    <div class="col-sm-9">
+                        <input id="certificateName" class="form-control col-sm-9" type="text" name="certificate_name" autocomplete="off" required>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label for="certificateName" class="col-sm-2 control-label">活动名称&nbsp;<span>*</span></label>
+                    <div class="col-sm-9">
+                        <input id="certificateName" class="form-control col-sm-9" type="text" name="certificate_name" autocomplete="off" required>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label for="certificateName" class="col-sm-2 control-label">活动时间&nbsp;<span>*</span></label>
+                    <div class="col-sm-9">
+                        <input id="certificateName" class="form-control col-sm-9" type="text" name="certificate_name" autocomplete="off" required>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label for="certificateNum" class="col-sm-2 control-label">主 &nbsp;办 &nbsp;方&nbsp;<span>*</span></label>
+                    <div class="col-sm-9">
+                        <input id="certificateNum" class="form-control col-sm-9" type="text" name="certificate_num" autocomplete="off" required>
+                    </div>
+                </div>
+                
+                <div class="row form-group">
+                    <label for="certificateType" class="col-sm-2 control-label">活动类型&nbsp;<span>*</span></label>
+                    <div class="col-sm-9">
+                        <select id="certificateType" class="form-control" type="text" name="certificate_type" required style="padding-left: 9px">
+                            <option value="">请选择活动类型</option>
+                            <option value="公益活动">公益活动</option>
+                            <option value="社团活动">社团活动</option>
+                            <option value="学科竞赛">学科竞赛</option>
+                            <option value="学术讲座">学术讲座</option>
+                            <option value="社会实践">社会实践</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row form-group">
+                    <label for="certificateType" class="col-sm-2 control-label">素拓类型&nbsp;<span>*</span></label>
+                    <div class="col-sm-9">
+                        <select id="certificateType" class="form-control" type="text" name="certificate_type" required style="padding-left: 9px">
+                            <option value="">请选择素拓类型</option>
+                            <option value="创新创业素质">创新创业素质</option>
+                            <option value="思想品德素质">思想品德素质</option>
+                            <option value="文化艺术素质">文化艺术素质</option>
+                            <option value="身心素质">身心素质</option>
+                            <option value="技能素质">技能素质</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label for="certificateType" class="col-sm-2 control-label">获得学分&nbsp;<span>*</span></label>
+                    <div class="col-sm-9">
+                        <select id="certificateType" class="form-control" type="text" name="certificate_type" required style="padding-left: 9px">
+                            <option value="">请选择学分</option>
+                            <option value="0.1">0.1</option>
+                            <option value="0.2">0.2</option>
+                            <option value="0.3">0.3</option>
+                            <option value="0.4">0.4</option>
+                            <option value="0.5">0.5</option>
+                            <option value="0.6">0.6</option>
+                        </select>
+                    </div>
+                </div>  
+
+                <div class="row form-group">
+                    <label for="fileName" class="col-sm-2 control-label" style="margin-top: 15px;">活动说明&nbsp;&nbsp;</label>
+                    <div class="col-sm-9" style="">
+                        <textarea id="fileName" type="text" name="file_name" autocomplete="off" class="form-control"></textarea>
+                        <!--  style="resize: none;"禁止手动扩展输入框 -->
+                    </div>
+                </div>  
+
+
+
+                <button class="btn" type="submit" id="upload">
+                    <i class="fa fa-cloud-upload"></i>
+                    <span>&nbsp;上传</span>
+                </button>
+                <button class="btn" type="reset" id="resetBtn">
+                    <i class="fa fa-repeat"></i>
+                    <span>&nbsp;重置</span>
+                </button>
+                <!-- 隐藏input元素用于验证是否提交 -->
+                <input type="hidden" name="action" value="addData" id="action"/>
+
+
+                </div><!-- 展示区内容控制End -->
+                    
+                
+            </form>
+
+        </div><!-- 展示区end -->
+
+
+    </div><!-- main-wrapper END -->
 
 </div><!-- page-wrapper END -->
 

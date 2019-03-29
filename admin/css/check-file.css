@@ -1,0 +1,55 @@
+/*素拓审核表格*/
+#checkFile {
+	max-width: 920px;
+	margin: 15px auto;
+
+}
+#checkFile tr th {
+	padding: 11px;
+	background: #006871;
+	text-align: center;
+	color: white;
+	border: 1px solid #DADADA;
+}
+/*第一列-姓名-的行宽*/
+#checkFile tr th:nth-child(1) {
+	width: 100px;
+}
+/*第二列-学号-的行宽*/
+#checkFile tr th:nth-child(2) {
+	width: 110px;
+}
+/*第三列-附件名称-的行宽*/
+#checkFile tr th:nth-child(3) {
+	width: 250px;
+}
+/*第四列-附件类型-的行宽*/
+#checkFile tr th:nth-child(4) {
+	width: 90px;
+}
+/*第五列-附件说明-的行宽*/
+#checkFile tr th:nth-child(5) {
+	width: 190px;
+}
+/*第六列-上传时间-的行宽*/
+#checkFile tr th:nth-child(6) {
+	width: 90px;
+}
+/*第七列-附件下载-的行宽*/
+#checkFile tr th:nth-child(7) {
+	width: 90px;
+}
+
+#checkFile tr td {
+	text-align: center;
+	font-size: 13px;
+	padding: 8px;
+	border: 1px solid #DADADA;
+}
+.fa-download {
+	color: #006871;
+	cursor: pointer;	
+}
+#checkFile tr:nth-child(odd) {
+	background-color: #F7FFFF;
+}
