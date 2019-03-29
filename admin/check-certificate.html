@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>素拓系统</title>
+    <link rel="icon" href="../logo/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/check.css">
+
+    <!-- 字体图标库 -->
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
+    <!-- 新 Bootstrap 核心 CSS 文件 --> 
+    <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
+    <!-- jQuery文件, 务必在bootstrap.min.js 之前引入 --> 
+    <script src="../jquery-3.3.1.js"></script> 
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 --> 
+    <script src="../bootstrap-3.3.7/js/bootstrap.js"></script>
+    <!-- 表单提交的form插件 -->
+    <script src="../jquery.form.js"></script>
+
+    <style type="text/css">
+        #checkCertificate a {
+            background: #006871;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <!-- 页眉 -->
+    <div class="head-container" style="background: #006871">
+        <div class="head-item-logo">
+            <a href="../home/index.html"><img src="../logo/title_white.png" style=" height: 40px;"></a>
+        </div>
+
+        <div id="navLeft" class="head-item-nav">
+            <ul id="navHide">
+                <li>
+                    <a href="../home/index.html">首页</a>
+                </li>
+                <li>
+                    <a href="#">活动资讯</a>
+                    <ul>
+                        <li>
+                            <a href="">公益活动</a>
+                        </li>
+                        <li>
+                            <a href="">社团活动</a>
+                        </li>
+                        <li>
+                            <a href="">学科竞赛</a>
+                        </li>
+                        <li>
+                            <a href="">学术讲座</a>
+                        </li>
+                        <li>
+                            <a href="">社会实践</a>
+                        </li>
+                    </ul>                   
+                </li>
+                <li>
+                    <a href="../home/index.html">经历公示</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="head-item-search">
+            <!-- <input type="text" name="search" class="form-control" placeholder="搜索活动..." style="color: #F5F5F5;"> -->
+
+        </div>
+
+        <div>
+            <a class="head-item-user" href="index.html" title="个人中心">
+                <i class="fa fa-user-circle-o" style=""></i>
+                <span class="user-name">admin</span>
+            </a>
+        </div>
+
+        <div id="navRight" class="head-item-nav">   
+
+            <ul>
+                <li><i class="fa fa-envelope"></i></li>
+                <li><i class="fa fa-cog"></i></li>
+            </ul>
+        </div>          
+    </div><!-- 页眉End -->
+
+</header>
+
+
+<div id="page-wrapper" >
+
+
+    <div id="sidebar">
+            
+        <div id="sidebarItem">
+            <!-- 青色遮罩 -->
+            <div id="user-info-bg"></div>
+                    
+            <div style="position: absolute; margin: 10px auto; width: 100%; top: 0">
+                <!-- 头像外边的圆框 -->
+                <!-- <div id="user-info-circle" style="">
+                                
+                    <img src="../logo/student.png" class="img-circle" style="">
+                </div> -->
+
+                <div id="sidebarHead">
+                    <p style="">
+                        welcome, <span class="user-name">admin</span>
+                        <i class="fa fa-cogs" id="dentity-student" style="display: none"></i>
+
+                        <i class="fa fa-cogs" id="dentity-admin" style="display: "></i>
+                </div>
+                
+                <!-- 审核数量 -->
+                <div id="user-info-check" style="color: white">
+                    <div class="user-info-check-item">
+                        <span id="pending-check-num" class="user-info-check-num">5</span>
+                        <p class="user-info-check-name">素拓</p>
+                        <!-- <span class="iconNew">new</span> -->
+                    </div>
+                    <div class="user-info-check-item">
+                        <span id="already-check-num" class="user-info-check-num">25</span>
+                        <p class="user-info-check-name">证书</p>
+                        <!-- <span class="iconNew">new</span> -->
+                    </div>
+                    <div class="user-info-check-item" style="border-right: none;">
+                        <span id="no-pass-num"  class="user-info-check-num">0</span>
+                        <p class="user-info-check-name">附件</p>
+                        <!-- <span class="iconNew">new</span> -->
+                    </div>
+                    
+                    
+                </div><!-- 审核数量End-->
+            </div>
+
+
+            <div id="content">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fa fa-home" style="color: #FF7400"></i>
+                            <span>主页</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li style="background: #F1F1F1;">
+                        <a href="check-st.html">
+                            <i class="fa fa-pencil-square" style="color: #2EACB8"></i>
+                            <span style="color: #006871;">审核</span>
+                            <i class="fa fa-angle-right" style="color: #006871;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="update.html">
+                            <i class="fa fa-refresh" style="color: #ffc029"></i>
+                            <span>更新</span>
+                            <i class="fa fa-angle-right "></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-commenting" style="font-size: 15px;color: #00A480"></i>
+                            <span>通知</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+                
+            </div><!-- 目录 End -->
+            
+        </div><!-- sidebarItem End -->
+
+
+        
+
+    </div><!-- 侧边栏End -->
+
+
+    <div id="main-wrapper">
+        <!-- title -->
+        <div style="border-bottom: 2px solid #006871;">
+            <ul>
+                <li>
+                    <a href="check-st.html">素拓审核</a>
+                </li>
+                <li class="checkActive">
+                    <a href="check-certificate.html" style="color: white;">证书审核</a>                   
+                </li>
+                <li>
+                    <a href="check-file.html">查看附件</a>                    
+                </li>
+
+            </ul>
+            
+        </div><!-- title End -->
+
+        <!-- 表格 -->
+        <div>
+            <form id="checkSt" ><!-- method="" action="" -->
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>学生姓名</th>
+                            <th>学号</th>
+                            <th>证书名称</th>
+                            <th>证书编号</th>
+                            <th>证书类型</th>
+                            <th>获得时间</th>
+                            <th>申报时间</th>
+                            <th colspan="2">操作</th>
+                        </tr>
+                        
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 280px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 260px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 280px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 260px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 260px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 260px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 260px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 260px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 260px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>冼升敏</td>
+                            <td>15251101251</td>
+                            <td style="max-width: 260px;overflow: hidden;">英语四级</td>
+                            <td>123456789</td>
+                            <td>英语能力证书</td>
+                            <td>2019-3-27</td>
+                            <td>2019-3-27</td>
+                            <td class="checkBtn">
+                                <i class="fa fa-check-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+
+                            <td class="checkBtn">
+                                <i class="fa fa-times-circle" style="cursor:pointer;" onclick="$(this).next().click();" title="不通过"></i>
+                                <button class="btn" type="submit" name="" style="display: none;"></button>
+                            </td>
+                        </tr>
+
+
+                        
+                    </tbody>
+                </table>
+            </form>
+            
+        </div><!-- 表格end -->
+
+
+        <!-- 翻页 -->
+        <nav style="position: absolute; bottom: 18px; right: 50%; transform: translate(50%)">
+            <ul class="pagination pagination-sm" style="height: 2px;">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav><!-- 翻页End -->
+
+
+        
+    </div>
+
+</div><!-- page-wrapper END -->
+
+
+<footer style="position: absolute; bottom: 0;width: 100%;">
+    <div class="footer" style=" background: #006871; margin-top: 5px; box-shadow: 0 -7px 20px 0 rgba(28,31,33,.1); position: relative; color: #cbe3e6;">
+        
+        <div style="width: 80%; margin:auto; padding: 15px 0">
+
+            <p style="text-align: center; margin: 0; font-size: 12px; color: #b7c6c9">© 2019 广东财经大学 版权所有</p>
+        </div>
+        
+    </div>
+
+</footer>    
+
+
+<script src="js/index.js"></script>
+
+
+</body>
+</html>

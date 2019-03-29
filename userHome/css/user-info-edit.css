@@ -1,10 +1,14 @@
 /*行间距*/
-#user-info-display tr>td {
+#user-info-edit tr td, #user-info-edit tr th{
 	padding: 5px 25px;
 }
-#user-info-display tr>td>input, #user-info-display tr>td>select {
+#user-info-edit tr>td>input, #user-info-edit tr>td>select {
 	height: 28px;
 }
+#user-info-edit {
+	margin: 10px 33px;
+}
+
 
 #feature-item-info {
 	position: relative;
@@ -27,3 +31,4 @@
 #user-info-form tr>td>select {
 	padding: 2px 9px;
 }
+

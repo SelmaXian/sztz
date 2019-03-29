@@ -36,6 +36,13 @@
 	padding: 10px 0; 
 	border-bottom: 1px dotted #EAEAEA;
 }
+/*学校通知内容区-日期*/
+#index-info-display>ul>li>span {
+	float: right;
+	margin-right: 15px;
+	font-size: 13px;
+	color: #D0D0D0;
+}
 
 
 /*展示区列表隐藏*/

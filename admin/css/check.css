@@ -109,7 +109,7 @@ header {
 	margin-left: 3px;
 }
 /*审核数量*/
-/*#user-info-check {
+#user-info-check {
 	display: flex; 
 	justify-content: center; 
 	height: 40px; 
@@ -118,7 +118,7 @@ header {
 .user-info-check-item {
 	position: relative;
 	text-align: center; 
-	padding:0 15px; 
+	padding:0 20px; 
 	border-right: 1px solid #DADADA;
 }
 .user-info-check-num {
@@ -127,7 +127,7 @@ header {
 }
 .user-info-check-name {
 	color: #9D9D9D;
-}*/
+}
 
 /*new icon的样式*/
 /*.iconNew {
@@ -196,6 +196,7 @@ header {
 
 
 
+
 /*右侧信件/设置标记*/
 #navRight ul {
 	display: flex;
@@ -216,22 +217,6 @@ header {
 	color: #F5F5F5;
 }
 
-/*登录弹框按钮*/
-/*#popLoginBox {
-	background: #027e89; 
-	line-height: 20px; 
-	color: white; 
-	padding: 6px 17px; 
-	font-size: 15px;
-}*/
-/*注册弹框按钮*/
-/*#popRegisterBox {
-	font-size: 15px; 
-	color: #a3a7a7
-}*/
-
-
-
 
 
 #page-wrapper {
@@ -241,10 +226,12 @@ header {
 }
 
 #main-wrapper {
+	position: relative;
 	border-radius: 3px;
 	box-shadow: 0 2px 14px 0 rgba(28,31,33,.2);	
 	width: 71%; 
 	height: auto;
+	min-height: 560px;
 }
 
 
@@ -339,64 +326,148 @@ header {
 
 
 
-#main-wrapper div h3 {
-	font-size: 18px;
-	font-weight: 550;
-	margin: 5px 30px 0px 30px;
-	padding-bottom: 5px;
+#main-wrapper div ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
-#main-wrapper h3 i {
-	font-size: 23px;
-	margin: 15px 0px 13px 0;	
-	padding-right: 5px;
+#main-wrapper div ul li {
+	display: inline-block;
+	cursor: pointer;
 }
-#main-wrapper-item {
-	display: flex;
-	justify-content: space-around;
-	margin: 5px 40px;	
+#main-wrapper div ul li a {
+	text-decoration: none;
+	font-size: 15px;
+	color: #333;
+	display: block;
+	padding: 13px 25px;
 }
-.item {
-	height: 205px;
-	width: 275px;
-	border-radius: 3px;
+
+#main-wrapper div ul li a:hover {
+	background: #006871;
+	color: white;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.checkActive a {
+	background: #006871;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+/*状态下拉菜单*/
+#stClassify {
+	position: relative;	
+	float: right;
+	width: 80px;
+	list-style: none;
+	font-size: 15.5px;
+	color: #9D9D9D;
+	padding-top: 20px;
+	letter-spacing: 1px;
+	z-index: 111;
+}
+#stClassify li ul {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	display: none;
+	list-style: none;
+	font-size: 14px;
+	padding: 7px 0;
+	color: #9D9D9D;
+	border-radius: 5px;
+	border: 1px solid rgb(225,225,225);
+	background: white;
+	box-shadow: 0 7px 10px 0 rgba(28,31,33,.1);
+	letter-spacing: 1px;
+}
+#stClassify li ul li a {
+	text-decoration: none;
+	color: gray;
+	padding: 7px 15px;
+	line-height: 25px;
+}
+#stClassify li ul li :hover {
+	background: rgb(240,240,240);
+	color: black;
+}
+
+#searchDiv form {
+	float: right;
+	display: inline-block;
+	margin-right: 50px;
+	margin-top: 7px;
+}
+.row div div input {
+	width: 150px;
+}
+
+
+
+/*素拓审核表格*/
+#checkSt {
+	max-width: 920px;
+	margin: 15px auto;
+
+}
+#checkSt tr th {
+	padding: 11px;
+	background: #006871;
+	text-align: center;
+	color: white;
 	border: 1px solid #DADADA;
 }
-.item div h4 {
-	background: #F1F1F1;
-	font-size: 15px;
-	font-weight: 550;
-	margin: 0;
-	padding: 13px 20px;
+/*第一列-姓名-的行宽*/
+#checkSt tr th:nth-child(1) {
+	width: 90px;
 }
-.item div h4 i {
-	color: #006871;
-	margin-right: 5px;
+/*第二列-学号-的行宽*/
+#checkSt tr th:nth-child(2) {
+	width: 100px;
 }
-.item p {
-	margin: 0 25px 0 25px;
-	padding: 7px 0 3px 0;
-	border-bottom: 1px dotted #DADADA;
+/*第三列-活动-名称-的行宽*/
+#checkSt tr th:nth-child(3) {
+	width: 260px;
 }
-.item p:last-child {
-	border-bottom: none;
+/*第四列-主办方-的行宽*/
+#checkSt tr th:nth-child(4) {
+	width: 110px;
 }
-.item p span {
-	float: right;
+/*第五列-活动类型-的行宽*/
+#checkSt tr th:nth-child(5) {
+	width: 105px;
 }
-#main-wrapper ul li {
-	font-size: 14px; 
-	color: gray; 
-	padding-bottom: 5px; 
-	border-bottom: 1px dotted #DADADA;
-	margin: 0 45px 10px 30px;
+/*第六列-活动时间-的行宽*/
+#checkSt tr th:nth-child(6) {
+	width: 85px;
 }
-/*学校通知内容区-日期*/
-#main-wrapper>ul>li>p {
-	text-align: right;
-	margin: 0 10px;
+/*第七列-申报时间-的行宽*/
+#checkSt tr th:nth-child(7) {
+	width: 85px;
+}
+/*第八列-操作-的行宽*/
+#checkSt tr th:nth-child(8) {
+	width: 85px;
+}
+
+#checkSt tr td {
+	text-align: center;
 	font-size: 13px;
-	color: #D0D0D0;
+	padding: 8px;
+	border: 1px solid #DADADA;
 }
-#main-wrapper ul {
-	margin-bottom: 35px;
+.fa-times-circle {
+	color: #e00000;
+	cursor: pointer;	
+}
+.fa-check-circle {
+	color: #00c938;
+	cursor: pointer;	
+}
+.checkBtn i {
+	font-size: 20px;
+}
+#checkSt tr:nth-child(odd) {
+	background-color: #F7FFFF;
 }

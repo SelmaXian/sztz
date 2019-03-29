@@ -10,7 +10,7 @@ if($_POST) {
 		// htmlspecialchars表示采用对数据库安全的格式转换一些特殊的HTML实体
 		$user_id = htmlspecialchars($_POST['user_id']);
 		$user_name = $_POST['user_name'];
-		$password = htmlspecialchars($_POST['password']);
+		$password = md5($_POST['password']);
 
 		// 查询语句，用以查询数据库
 		// INSERT语句还有一种写法是INSERT INTO table(date) VALUES("111");
@@ -21,7 +21,7 @@ if($_POST) {
 
 		// $result不为空则执行如下语句
 		if($result == 1) {
-			$msg = "注册成功！页面将在点击确认2s后自动跳转...";
+			$msg = "注册成功！";
 			// 调用success函数，将变量$msg的值作为实参传入，下同
 			success($msg);
 		} else {

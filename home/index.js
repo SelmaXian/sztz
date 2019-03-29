@@ -80,7 +80,7 @@ $('#btn-register').click(function() {
 			}else if (json.status == "success") {
 				alert(json.message);
 				cleanInputs();  // 提交成功后调用清空表单函数清空表单输入域
-				setTimeout("location.href='../userHome/index.html'", 1500);
+				setTimeout("location.href='../userHome/index.html'", 1000);
 			}else{alert("Nothing Happened");}
 		}, "json");
 });
