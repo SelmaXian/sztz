@@ -1,5 +1,13 @@
 $(function() {
 
+	// 顶部菜单栏活动资讯下拉菜单
+	$("#navHide li").mouseenter(function() {
+		$(this).find("ul").show();
+	});
+	$("#navHide li").mouseleave(function() {
+		$(this).find("ul").hide();
+	});
+
 	function getUserInfo() {
 		$.getJSON("./php/service.php?action=getUserInfo", function(json) {
 

@@ -1,0 +1,62 @@
+
+/*查看活动表格*/
+#activityView {
+	max-width: 920px;
+	margin: 15px auto;
+}
+/*表格固定宽度，就是表格既要自适应他外面的容器，也不要撑出去*/
+#activityView table {
+	table-layout: fixed;
+}
+
+#activityView tr th {
+	padding: 11px;
+	background: #006871;
+	text-align: center;
+	color: white;
+	border: 1px solid #DADADA;
+}
+/*第一列-活动序号-的行宽*/
+#activityView tr th:nth-child(1) {
+	width: 90px;
+}
+/*第二列-活动名称-的行宽*/
+#activityView tr th:nth-child(2) {
+	width: 300px;
+}
+/*第三列-主办方-的行宽*/
+#activityView tr th:nth-child(3) {
+	width: 130px;
+}
+/*第四列-活动类型-的行宽*/
+#activityView tr th:nth-child(4) {
+	width: 90px;
+}
+/*第五列-活动时间-的行宽*/
+#activityView tr th:nth-child(5) {
+	width: 90px;
+}
+/*第六列-学分-的行宽*/
+#activityView tr th:nth-child(6) {
+	width: 60px;
+}
+/*第七列-活动简介-的行宽*/
+#activityView tr th:nth-child(7) {
+	width: 160px;
+}
+
+#activityView tr td {
+	text-align: center;
+	font-size: 13px;
+	padding: 8px;
+	border: 1px solid #DADADA;
+	word-break: break-all;
+}
+#activityView tr:nth-child(odd) {
+	background-color: #F7FFFF;
+}
+
+
+
+
+

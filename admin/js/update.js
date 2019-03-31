@@ -1,16 +1,6 @@
+$(function() {
 
-
-$(function () {
-
-	// 顶部菜单栏活动资讯下拉菜单
-	$("#navHide li").mouseenter(function() {
-		$(this).find("ul").show();
-	});
-	$("#navHide li").mouseleave(function() {
-		$(this).find("ul").hide();
-	});
-
-    $(".certificate-display-item li").click(function () {
+	$("#activityDisplay ul li").click(function () {
         // find方法寻找当前元素的后代元素
         if($(this).find("ul").is(':hidden')){
             // toggle方法在显示和隐藏状态之间切换，括号内是速率
@@ -18,7 +8,7 @@ $(function () {
         }else{
             $(this).find("ul").toggle(500);
         }
-    })
+    });
+
+
 });
-
-

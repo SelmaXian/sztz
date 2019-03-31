@@ -1,10 +1,15 @@
+
+#navLeft{
+	z-index: 111;
+}
+
 /*提交按钮*/
 #upload {
 	width: 425px;
 	background: #006871;
 	font-size: 16px;
 	color: white;
-	margin: 40px 0 25px 0;
+	margin: 15px 0 15px 0;
 }
 #upload:hover {
 	background: rgb(239,150,50);
@@ -20,8 +25,12 @@
 	background: #CCC;
 	color: #333;
 }
-
+/*上传活动中各input框的垂直间距*/
 .form-group {
+	margin: 10px 0;
+}
+/*更新照片中各input框的垂直间距*/
+.form-group-phpto {
 	margin: 30px 0;
 }
 .control-label {

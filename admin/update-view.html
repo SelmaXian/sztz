@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title>素拓系统</title>
     <link rel="icon" href="../logo/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/check.css">
+    <link rel="stylesheet" type="text/css" href="css/update.css">
+    <link rel="stylesheet" type="text/css" href="css/update-view.css">
 
     <!-- 字体图标库 -->
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
@@ -72,8 +74,8 @@
         <div id="navRight" class="head-item-nav">   
 
             <ul>
-                <li><i class="fa fa-question-circle" title="帮助"></i></li>
-                <li><i class="fa fa-power-off" title="退出"></i></li>
+                <li><i class="fa fa-envelope"></i></li>
+                <li><i class="fa fa-cog"></i></li>
             </ul>
         </div>          
     </div><!-- 页眉End -->
@@ -103,48 +105,38 @@
                         <i class="fa fa-cogs" id="dentity-student" style="display: none"></i>
 
                         <i class="fa fa-cogs" id="dentity-admin" style="display: "></i>
-                            
-                        </span>
-                    </p>
-
-                    <p>
-                        <span>本次登陆时间：</span>
-                    </p>
-                    <p>
-                        <span>上次登陆时间：</span>
-                    </p>
                 </div>
                 
                 <!-- 审核数量 -->
-                <!-- <div id="user-info-check" style="color: white">
+                <div id="user-info-check" style="color: white">
                     <div class="user-info-check-item">
                         <span id="pending-check-num" class="user-info-check-num">5</span>
                         <p class="user-info-check-name">素拓</p>
-                        <span class="iconNew">new</span>
+                        <!-- <span class="iconNew">new</span> -->
                     </div>
                     <div class="user-info-check-item">
                         <span id="already-check-num" class="user-info-check-num">25</span>
                         <p class="user-info-check-name">证书</p>
-                        <span class="iconNew">new</span>
+                        <!-- <span class="iconNew">new</span> -->
                     </div>
                     <div class="user-info-check-item" style="border-right: none;">
                         <span id="no-pass-num"  class="user-info-check-num">0</span>
-                        <p class="user-info-check-name">投诉</p>
-                        <span class="iconNew">new</span>
+                        <p class="user-info-check-name">附件</p>
+                        <!-- <span class="iconNew">new</span> -->
                     </div>
                     
                     
-                </div> --><!-- 审核数量End -->
+                </div><!-- 审核数量End-->
             </div>
 
 
             <div id="content">
                 <ul>
-                    <li style="background: #F1F1F1;">
+                    <li>
                         <a href="index.html">
                             <i class="fa fa-home" style="color: #FF7400"></i>
-                            <span style="color: #006871;">主页</span>
-                            <i class="fa fa-angle-right" style="color: #006871;"></i>
+                            <span>主页</span>
+                            <i class="fa fa-angle-right"></i>
                         </a>
                     </li>
                     <li>
@@ -154,11 +146,11 @@
                             <i class="fa fa-angle-right"></i>
                         </a>
                     </li>
-                    <li>
+                    <li style="background: #F1F1F1;">
                         <a href="update-activity.html">
                             <i class="fa fa-refresh" style="color: #ffc029"></i>
-                            <span>更新</span>
-                            <i class="fa fa-angle-right "></i>
+                            <span style="color: #006871;">更新</span>
+                            <i class="fa fa-angle-right" style="color: #006871;"></i>
                         </a>
                     </li>
                     <li>
@@ -182,81 +174,98 @@
 
     <div id="main-wrapper">
         <!-- title -->
-        <div style="">
-            <h3>
-                <i class="fa fa-angle-double-right"></i>
-                <span>待审核事项</span>
-            </h3>
-        </div>
+        <div style="border-bottom: 2px solid #006871;">
+            <ul>
+                <li>
+                    <a href="update-activity.html">上传活动</a>
+                </li>
+                <li>
+                    <a href="update-photo.html">活动照片</a>                   
+                </li>
+                <li class="checkActive">
+                    <a href="update-view.html" style="color: white;">查看活动</a>                    
+                </li>
 
-
-        <div id="main-wrapper-item">
-            <div class="item">
-                <div>
-                    <h4>
-                        <i class="fa fa-paper-plane"></i>
-                        素拓活动
-                    </h4>
-                </div>
-                <p>公益活动 <span>0</span></p>
-                <p>社团活动 <span>0</span></p>
-                <p>学科竞赛 <span>0</span></p>
-                <p>学术讲座 <span>0</span></p>
-                <p>社会实践 <span>0</span></p>
-            </div>
-            <div class="item">
-                <div>
-                    <h4>
-                        <i class="fa fa-id-card"></i>
-                        证书
-                    </h4>
-                </div>
-                <p>计算机等级证书  <span>0</span></p>
-                <p>英语能力证书    <span>0</span></p>
-                <p>IT能力证书      <span>0</span></p>
-                <p>职业资格证书    <span>0</span></p>
-                <p>其他证书        <span>0</span></p>
-            </div>
-            <div class="item">
-                <div>
-                    <h4>
-                        <i class="fa fa-folder-open"></i>
-                        附件
-                    </h4>
-                </div>
-                <p>活动证明  <span>0</span></p>
-                <p>证书经历证明 <span>0</span></p>
-                <p>其他材料 <span>0</span></p>
-            </div>
-
-        </div><!-- main-wrapper-item end -->
-
-
-
-
-
-
-
-        <!-- title -->
-        <div style="margin-top: 20px;">
-            <h3>
-                <i class="fa fa-angle-double-right"></i>
-                <span>通知</span>
-            </h3>
-        </div>
-        <ul>
-            <li>全国大学生电子商务“创新、创意及创业”挑战赛（简称“三创赛”）是激发大学生兴趣与潜能，培养大学生创新意识、创意思维、创业能力以及团队协同实战精神的学科性竞赛。有创业想法的同学可点击链接了解并参与，截止报名日期3月31日。<a href="http://www.3chuang.net/news/88">http://www.3chuang.net/news/88</a>
-                <p>更新时间：<span>2019-3-22 11:10:17</span></p></li> 
-
-            <li>《关于开展2019届本科毕业论文（设计）反抄袭检测工作的通知》已经印发，请根据通知要求做好相关工作，尤其是提醒学生按时上系统去重设密码。以免免费检测账号被盗。
-                <p>更新时间：<span>2019-3-17 14:40:20</span></p></li>
-
-            <li>根据《关于做好2019届本科毕业论文（设计）中期检查工作的通知》，请同学填写附件3《本科生毕业论文（设计）中期进度报告》（不少于1000字）于本周五前交给指导老师。
-                <p>更新时间：<span>2019-3-17 15:13:07</span></p></li>
+            </ul>
             
-        </ul>
+        </div>
+
         
-    </div>
+        <!-- 表格 -->
+        <div>
+            <form id="activityView" ><!-- method="" action="" -->
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>活动序号</th>
+                            <th>活动名称</th>
+                            <th>主 办 方</th>
+                            <th>活动类型</th>
+                            <th>活动时间</th>
+                            <th>学分</th>
+                            <th>活动简介</th>
+                        </tr>
+                        
+                        <tr>
+                            <td>201903001</td>
+                            <td>图书馆雅风xAIESEC人生体验馆</td>
+                            <td>信息学院</td>
+                            <td>公益活动</td>
+                            <td>2019-3-27</td>
+                            <td>0.4</td>
+                            <td>1111111111111111111111111111111111111111111111111</td>
+                        </tr>
+
+                        <tr>
+                            <td>201903001</td>
+                            <td>图书馆雅风xAIESEC人生体验馆</td>
+                            <td>信息学院</td>
+                            <td>公益活动</td>
+                            <td>2019-3-27</td>
+                            <td>0.4</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>201903001</td>
+                            <td>图书馆雅风xAIESEC人生体验馆</td>
+                            <td>信息学院</td>
+                            <td>公益活动</td>
+                            <td>2019-3-27</td>
+                            <td>0.4</td>
+                            <td>11111111</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </form>
+            
+        </div><!-- 表格end -->
+
+
+
+
+        <!-- 翻页 -->
+        <div style="height: 45px;"></div>
+        <nav style="position: absolute; bottom: 18px; right: 50%; transform: translate(50%);">
+            <!-- style right: 50%; transform: translate(50%) -->
+            <ul class="pagination pagination-sm" style="height: 2px;">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav><!-- 翻页End -->
+
+
+    </div><!-- main-wrapper END -->
 
 </div><!-- page-wrapper END -->
 

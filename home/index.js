@@ -1,89 +1,92 @@
 
-// 视口宽度
-// console.log($(window).width());
-// console.log($(window).height());
-$("#popLoginBox").click(function popLoginBox() {
-	$('#login').show();  //显示登陆弹窗
-	$('#login-feature-left').addClass('login-active');
-	$("#loginCover").css('height', document.body.clientHeight + 'px');
-    $('#loginCover').css('display', 'block');
-    document.documentElement.style.overflow = 'hidden'; 
+$(function() {
+
+	// 顶部菜单栏活动资讯下拉菜单
+	$("#navHide li").mouseenter(function() {
+		$(this).find("ul").show();
+	});
+	$("#navHide li").mouseleave(function() {
+		$(this).find("ul").hide();
+	});
+
+	// 视口宽度
+	// console.log($(window).width());
+	// console.log($(window).height());
+	// 打开遮罩
+	$("#popLoginBox, #popRegisterBox").click(function coverShow() {
+		$("#cover").css('height', document.body.clientHeight + 'px');
+	    $('#cover').show();
+	    document.documentElement.style.overflow = 'hidden'; 
+	});
+
+	$("#popLoginBox").click(function popLoginBox() {
+		$('#loginWrapper').show();  //显示登陆弹窗		
+	});
+
+	$("#popRegisterBox").click(function popRegisterBox() {
+		$('#registerWrapper').show();  //显示注册弹窗
+	});
+
+	// 在注册弹窗中点击登录功能
+	$(".register-feature").click(function popLoginBox() {
+		$('#registerWrapper').hide();
+		$('#loginWrapper').show();  //显示登陆弹窗
+	});
+
+	// 在登录弹窗中点击注册功能
+	$(".login-feature").click(function popRegisterBox() {
+		$('#loginWrapper').hide();	
+		$('#registerWrapper').show();  //显示注册弹窗	 
+	});
+
+	//关闭遮罩层
+	$("#cover").click(function closeLoginBox() {
+	    $('#cover').hide(); 
+	    $('#loginWrapper').hide();	
+	    $('#registerWrapper').hide();
+	    document.documentElement.style.overflow = 'scroll'; 
+	});
+
+
+	// 密码显示/隐藏
+	$(".password-hide").on("click", ".fa-eye-slash", function () {
+	    $(this).removeClass("fa-eye-slash").addClass("fa-eye");
+	    $(this).next().attr("type", "text");
+	});
+	 
+	$(".password-hide").on("click", ".fa-eye", function () {
+	    $(this).removeClass("fa-eye").addClass("fa-eye-slash");
+	    $(this).next().attr("type", "password");
+	});
+
+
+	// 最近的活动hover弹框触发
+	$("[data-toggle='tooltip']").tooltip();
+
+	// 注册功能
+	$('#registerBtn').click(function() {
+		// 选择表单的所有input输入元素,serializeArray将创建一个“键/值”对关联数组,把所有表单输入连接起来
+		var data = $("#registerForm :input").serializeArray();
+
+		// $.post是jQuery快捷方法，用于向服务器发送数据。
+		// 向action这个url发送数据data，完成以后执行function，向它传入php返回的json格式数据
+		$.post($("#registerForm").attr('action'), data, function(json){
+				// 查看json数据的值，进行条件判断并输出相应值
+				// 具体看php的success函数
+				if (json.status == "fail") {
+					alert(json.message);
+					cleanInputs();
+				}else if (json.status == "success") {
+					alert(json.message);
+					cleanInputs();  // 提交成功后调用清空表单函数清空表单输入域
+					setTimeout("location.href='../userHome/index.html'", 1000);
+				}else{alert("Nothing Happened");}
+			}, "json");
+	});
+
 });
 
-$("#popRegisterBox").click(function popRegisterBox() {
-	$('#register').show();  //显示注册弹窗
-	$('#register-feature-right').addClass('login-active');	
-	$('#loginCover').css('height', document.body.clientHeight + 'px');
-    $('#loginCover').css('display', 'block');
-    document.documentElement.style.overflow = 'hidden'; 
-});
 
-// 在注册弹窗中点击登录功能
-$("#register-feature-left").click(function popLoginBox() {
-	$('#register').css('display', 'none');
-	$('#login').show();  //显示登陆弹窗
-	$('#login-feature-left').addClass('login-active');
-	$("#loginCover").css('height', document.body.clientHeight + 'px');
-    $('#loginCover').css('display', 'block');
-    document.documentElement.style.overflow = 'hidden'; 
-});
-
-// 在登录弹窗中点击注册功能
-$("#login-feature-right").click(popRegisterBox);
-
-function popRegisterBox() {
-	$('#login').css('display', 'none');	
-	$('#register').show();  //显示注册弹窗
-	$('#register-feature-right').addClass('login-active');	
-	$('#loginCover').css('height', document.body.clientHeight + 'px');
-    $('#loginCover').css('display', 'block');
-    document.documentElement.style.overflow = 'hidden'; 
-}
-
-
-$("#loginCover").click(function closeLoginBox() {
-    $('#loginCover').css('display', 'none'); //关闭遮罩层
-    $('#login').css('display', 'none');	
-    $('#register').css('display', 'none');
-    document.documentElement.style.overflow = 'scroll'; 
-});
-
-
-// 密码显示/隐藏
-$(".passwordHide").on("click", ".fa-eye-slash", function () {
-    $(this).removeClass("fa-eye-slash").addClass("fa-eye");
-    $(this).next().attr("type", "text");
-});
- 
-$(".passwordHide").on("click", ".fa-eye", function () {
-    $(this).removeClass("fa-eye").addClass("fa-eye-slash");
-    $(this).next().attr("type", "password");
-});
-
-
-// 最近的活动hover弹框触发
-$(function () { $("[data-toggle='tooltip']").tooltip(); });
-
-// 注册功能
-$('#btn-register').click(function() {
-	// 选择表单的所有input输入元素,serializeArray将创建一个“键/值”对关联数组,把所有表单输入连接起来
-	var data = $("#register-form :input").serializeArray();
-
-	// $.post是jQuery快捷方法，用于向服务器发送数据。
-	// 向action这个url发送数据data，完成以后执行function，向它传入php返回的json格式数据
-	$.post($("#register-form").attr('action'), data, function(json){
-			// 查看json数据的值，进行条件判断并输出相应值
-			// 具体看php的success函数
-			if (json.status == "fail") {
-				alert(json.message);
-				cleanInputs();
-			}else if (json.status == "success") {
-				alert(json.message);
-				cleanInputs();  // 提交成功后调用清空表单函数清空表单输入域
-				setTimeout("location.href='../userHome/index.html'", 1000);
-			}else{alert("Nothing Happened");}
-		}, "json");
-});
 
 // 清空表单函数
 function cleanInputs() {
@@ -94,7 +97,7 @@ function cleanInputs() {
 
 function saveReport() { 
 	// jquery 表单提交 
-	$("#register-form").ajaxSubmit(function(message) { 
+	$("#registerForm").ajaxSubmit(function(message) { 
 	// 对于表单提交成功后处理，message为提交页面saveReport.htm的返回内容 
 	}); 
 

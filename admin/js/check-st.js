@@ -1,4 +1,13 @@
 $(function() {
+
+	$("#navHide li").mouseenter(function() {
+		$(this).find("ul").show();
+	});
+	$("#navHide li").mouseleave(function() {
+		$(this).find("ul").hide();
+	});
+
+	
 	$("#stClassify").mouseenter(function() {
 		$("#stClassify").find('ul').show();
 		$("#stClassify li i").css('transform','rotate(90deg)');

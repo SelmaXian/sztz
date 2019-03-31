@@ -99,6 +99,7 @@
 	font-size: 13px;
 	padding: 8px;
 	border: 1px solid #DADADA;
+	word-break: break-all;
 }
 .fa-times-circle {
 	color: #e00000;	

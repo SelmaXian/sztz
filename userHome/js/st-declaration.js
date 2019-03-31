@@ -1,4 +1,14 @@
 $(function() {
+
+    // 顶部菜单栏活动资讯下拉菜单
+    $("#navHide li").mouseenter(function() {
+        $(this).find("ul").show();
+    });
+    $("#navHide li").mouseleave(function() {
+        $(this).find("ul").hide();
+    });
+
+    
 	$("#st-declaration-classify").mouseenter(function() {
 		$("#st-declaration-classify").find('ul').show();
 		$("#st-declaration-classify li i").css('transform','rotate(90deg)');

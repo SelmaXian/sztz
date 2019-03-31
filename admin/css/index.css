@@ -10,8 +10,6 @@ body {
 	font-family: "Arial","Hiragino Sans GB", "Helvetica", "sans-serif";
 	min-width: 1080px;
 
-/*	background: rgb(246,246,246);*/
-
 	/*滚动条样式*/
 	scrollbar-arrow-color: gray; /*上下按钮上三角箭头的颜色*/
 	scrollbar-face-color: #CBCBCB; /*滚动条凸出部分的颜色*/
@@ -170,6 +168,9 @@ header {
 	padding: 19px 20px;
 	color: white;
 	height: 60px;
+}
+#navLeft>ul>li:first-child>a {
+	padding: 19px 34px;
 }
 /*隐藏二级菜单*/
 #navLeft ul li ul {

@@ -55,9 +55,6 @@
                         </li>
                     </ul>                   
                 </li>
-                <li>
-                    <a href="../home/index.html">经历公示</a>
-                </li>
             </ul>
         </div>
 
@@ -149,14 +146,14 @@
                         </a>
                     </li>
                     <li style="background: #F1F1F1;">
-                        <a href="update.html">
+                        <a href="update-activity.html">
                             <i class="fa fa-refresh" style="color: #ffc029"></i>
                             <span style="color: #006871;">更新</span>
                             <i class="fa fa-angle-right" style="color: #006871;"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="note.html">
                             <i class="fa fa-commenting" style="font-size: 15px;color: #00A480"></i>
                             <span>通知</span>
                             <i class="fa fa-angle-right"></i>
@@ -179,13 +176,13 @@
         <div style="border-bottom: 2px solid #006871;">
             <ul>
                 <li>
-                    <a href="update.html">上传活动</a>
+                    <a href="update-activity.html">上传活动</a>
                 </li>
                 <li class="checkActive">
                     <a href="update-photo.html" style="color: white;">活动照片</a>                   
                 </li>
                 <li>
-                    <a href="">最近的活动</a>                    
+                    <a href="update-view.html">查看活动</a>                    
                 </li>
 
             </ul>
@@ -196,14 +193,16 @@
         <div style="margin: 25px 0 0 25px;color: #999;">
             <p>说明：该功能是指更新系统首页滚动轮播图中的活动照片</p>
         </div>
+
+
         <!-- 展示区 -->
-        <div style="margin-left: 35px;margin-right: 30px;" >   
+        <div style="margin-left: 35px;" >   
 
             <form action="php/upload-file.php" method="post" id="upload-file" enctype="multipart/form-data" onsubmit="return saveReport();" >
 
                 <!-- 展示区内容控制 -->
-                <div style="text-align: center; width: 600px; margin: 55px auto;">
-                <div class="row form-group">
+                <div style="text-align: center; width: 700px; margin: 55px auto;">
+                <div class="row form-group-phpto">
                     <label for="certificateType" class="col-sm-2 control-label">照片位置&nbsp;<span>*</span></label>
                     <div class="col-sm-9">
                         <select id="certificateType" class="form-control" type="text" name="certificate_type" required style="padding-left: 9px">
@@ -216,14 +215,14 @@
                     </div>
                 </div>
 
-                <div class="row form-group">
+                <div class="row form-group-phpto">
                     <label for="certificateName" class="col-sm-2 control-label">照片标题&nbsp;<span>*</span></label>
                     <div class="col-sm-9">
                         <input id="certificateName" class="form-control col-sm-9" type="text" name="certificate_name" autocomplete="off" placeholder="请输入照片下方要显示的说明内容，如：第十九届IT文化节开幕式" required>
                     </div>
                 </div>
 
-                <div  class="row form-group">               
+                <div  class="row form-group-phpto">               
                     <label for="fileName" class="col-sm-2 control-label">照片选择&nbsp;<span>*</span></label>
                     <div class="input-group col-sm-9" style="padding:0 15px;">
                           <input id="filePath" class="form-control" type="text" autocomplete="off" required placeholder="支持*.jpg,*.png,*.gif; 限制5MB">
@@ -235,7 +234,7 @@
 
 
 
-                <button class="btn" type="submit" id="upload">
+                <button class="btn" type="submit" id="upload" style="margin: 40px 0 25px 0;">
                     <i class="fa fa-cloud-upload"></i>
                     <span>&nbsp;上传</span>
                 </button>

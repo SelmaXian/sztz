@@ -142,7 +142,10 @@ header {
 
 
 
-
+/*活动资讯下拉菜单*/
+#navLeft{
+	z-index: 111;
+}
 
 
 /*总栏一整条*/
@@ -170,6 +173,9 @@ header {
 	padding: 19px 20px;
 	color: white;
 	height: 60px;
+}
+#navLeft>ul>li:first-child>a {
+	padding: 19px 34px;
 }
 /*隐藏二级菜单*/
 #navLeft ul li ul {

@@ -1,0 +1,76 @@
+/*活动资讯下拉菜单*/
+#navLeft{
+	z-index: 111;
+}
+
+/*提交按钮*/
+#upload {
+	width: 425px;
+	background: #006871;
+	font-size: 16px;
+	color: white;
+	margin: 25px 0 20px 0;
+}
+#upload:hover {
+	background: rgb(239,150,50);
+	color: white;
+}
+/*重置按钮*/
+#resetBtn {
+	width: 425px;
+	font-size: 16px;
+	color: gray;
+}
+#resetBtn:hover {
+	background: #CCC;
+	color: #333;
+}
+/*上传活动中各input框的垂直间距*/
+.form-group {
+	margin: 15px 0;
+}
+.control-label {
+	margin-top: 7px;
+	font-size: 15px;
+}
+/*必填副号*红色显示*/
+.control-label span {
+	color: red;
+}
+
+
+
+
+/*历史通知表格*/
+#noteView {
+	max-width: 920px;
+	margin: 15px auto;
+}
+
+#noteView tr th {
+	padding: 11px;
+	background: #006871;
+	text-align: center;
+	color: white;
+	border: 1px solid #DADADA;
+}
+/*第一列-发布时间-的行宽*/
+#noteView tr th:nth-child(1) {
+	width: 150px;
+}
+/*第二列-通知内容-的行宽*/
+#noteView tr th:nth-child(2) {
+	width: 650px;
+}
+/*第三列-发布单位-的行宽*/
+#noteView tr th:nth-child(3) {
+	width: 120px;
+}
+/*单元格*/
+#noteView tr td {
+	text-align: center;
+	font-size: 13px;
+	padding: 8px;
+	border: 1px solid #DADADA;
+	word-break: break-all;
+}

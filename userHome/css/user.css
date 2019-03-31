@@ -8,7 +8,6 @@ body {
 	font-size: 16px;
 	font-family: "Arial","Hiragino Sans GB", "Helvetica", "sans-serif";
 	min-width: 1080px;
-/*	background: rgb(246,246,246);*/
 
 	/*滚动条样式*/
 	scrollbar-arrow-color: gray; /*上下按钮上三角箭头的颜色*/
@@ -80,7 +79,7 @@ header {
 	width:100%;
 	min-width: 1075px;	
 	align-items:center;
-	height: 65px;
+	height: 64px;
 	font-size: 16px;
 	background: white;
 	box-shadow: 0 2px 14px 0 rgba(28,31,33,.2); 
@@ -119,6 +118,7 @@ header {
 .head-item-user span{
 	margin-left: 3px;
 }
+/*审核数量*/
 #user-info-check {
 	display: flex; 
 	justify-content: center; 
@@ -140,41 +140,93 @@ header {
 
 
 
-/*导航*/
-.head-item-nav ul {
-	margin: 0 20px 0 0;
-	padding-left: 20px;
-	list-style: none;
-}
-/*导航1*/
-.head-item-nav ul li {
+
+
+
+
+/*总栏一整条*/
+.head-item-nav>ul>li {
 	display: inline;
-	width: 100px;
 }
-.head-item-nav ul li a{
-	color: ;
+/*一级导航栏*/
+#navLeft ul {
+	display: flex;
+	align-items: center;
+	height: 64px;
+	margin: 0;
 }
-/*导航1-1功能项*/
-.nav-left ul li {
-	padding: 0 20px;
+#navLeft{
+	z-index: 111;
 }
-/*导航1-2登陆*/
-.nav-right ul li {
+/*一级导航栏功能项*/
+#navLeft ul li {
+	position: relative;
+	padding: 21px 0px;
+	cursor: pointer;
+}
+#navLeft ul li:hover {
+	background: rgb(255,141,60);
+}
+#navLeft>ul>li>a {
+	text-decoration: none;
+	padding: 21px 20px;
+	color: white;
+	height: 64px;
+}
+#navLeft>ul>li:first-child>a {
+	padding: 21px 34px;
+}
+/*隐藏二级菜单*/
+#navLeft ul li ul {
+	display: none;	
+	list-style: none;
+	position: absolute;
+	width: auto;
+	top: 100%;
+	left: 0;
+	min-width: 104px;
+	padding: 0px;
+}
+#navLeft ul li ul li {	
+	width: auto;
+	background: #004e55;
+	padding: 10px 20px;
+}
+#navHide>li>ul>li>a {
+	text-decoration: none;
+	color: white;
+}
+
+
+
+
+
+/*右侧信件/设置标记*/
+#navRight ul {
+	display: flex;
+	align-items: center;
+	height: 60px;
+	margin: 0;
+	padding: 0 30px 0 15px;
+}
+#navRight ul li {
 	padding: 0 5px;
 	cursor: pointer; 
 }
-.nav-right ul li i:hover {
+#navRight ul li i:hover {
 	color: rgb(250,125,60);
 }
-.nav-right ul li i {
+#navRight ul li i {
 	font-size: 17px;
 	color: #F5F5F5;
 }
 
-.nav-left ul li a {
-	text-decoration: none;
-	color: black;
-}
+
+
+
+
+
+
 /*登录弹框按钮*/
 #popLoginBox {
 	background: #027e89; 

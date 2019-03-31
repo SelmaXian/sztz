@@ -5,6 +5,7 @@
 	<title>素拓系统</title>
 	<link rel="icon" href="../logo/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="login.css">
 
 	<!-- 字体图标库 -->
 	<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css"/>
@@ -23,75 +24,78 @@
 <div id="box">
 
 	<!-- 遮罩 -->
-	<div id="loginCover" style="background: #000; position: absolute; left: 0px; top: 0px; width: 100%; opacity: .7; display: none; z-index: 2 ">
+	<div id="cover">
 		
 	</div>
 
 	<!-- 登陆模块 -->
-	<div id="login">
+	<div id="loginWrapper">
 		
-		<div id="login-head">
+		<div id="loginHead">
 			<a href="#"><img src="../logo/login_title.png"  style="width: 170px"></a>
 
 			<ul style="padding:20px 0">
-				<li class="login-feature" id="login-feature-left">登 陆</li>
-				<li class="login-feature" id="login-feature-right">注 册</li>
+				<li class="login-feature login-active">登 陆</li>
+				<li class="login-feature">注 册</li>
 			</ul>
 
 		</div>			
 		
-		<div id="login-body">			
+		<div>			
 
-		<form action="" method="">
+		<form id="loginForm" action="" method="">
 
-			<input type="text" name="userId" id="user_id" class="form-control userId" placeholder="请输入学号"  style="width: 250px; margin: auto;background: url(../logo/user.png) no-repeat 8px 7.5px; padding-left: 30px">
+			<input id="loginUserId" type="text" name="userId" class="form-control userId" placeholder="请输入学号">
 			<br>
 
-			<div class="passwordHide" style="position: relative;">
-			<i class="fa fa-eye-slash" style="position: absolute; left: 79%; top: 30%; color: #A8A8A8; cursor: pointer;"></i>
-			<input type="password" id="password" name="password" value="" class="form-control password" placeholder="请输入密码" style="width: 250px; margin: auto; background: url(../logo/key.png) no-repeat 8px 7.5px; padding: 0 30px">
+			<div class="password-hide">
+				<i class="fa fa-eye-slash" style=""></i>
+				<input type="password" id="loginPassword" name="password" value="" class="form-control password" placeholder="请输入密码">
 			</div>
 
 			<br>
 			<p style="padding-left: 230px"><a href="#">忘记密码？</a></p>
 			
-			<button class="btn btn-success" style="display:block; width: 250px; margin:auto; font-size: 16px; background-color: rgb(0,104,113); border-color: rgb(0,104,113)">登 陆</button>
+			<button id="loginBtn" class="btn btn-success">登 陆</button>
+
+			<!-- 隐藏input元素用于验证是否提交 -->
+			<input type="hidden" name="action" value="addData" id="action"/>
 		</form>
 
 		</div>
 	</div>
 
 	<!-- 注册模块 -->
-	<div id="register" style="height: 450px;">
+	<div id="registerWrapper" style="height: 450px;">
 		
-		<div id="register-head">
+		<div id="registerHead">
 			<a href="#"><img src="../logo/login_title.png"  style="width: 170px"></a>
 
 			<ul style="padding:20px 0">
-				<li class="register-feature" id="register-feature-left">登 陆</li>
-				<li class="register-feature" id="register-feature-right">注 册</li>
+				<li class="register-feature">登 陆</li>
+				<li class="register-feature login-active">注 册</li>
 			</ul>
 
 		</div>			
 		
-		<div id="register-body">			
+		<div>			
 
-		<form id="register-form" name="register-form" action="service.php" method="post"  autocomplete="off" onsubmit="return saveReport(); ">
-			<input type="text" id="registerUserId" name="user_id" value="" class="form-control userId" placeholder="请输入注册学号"  style="width: 250px; margin: auto;background: url(../logo/user.png) no-repeat 8px 7.5px; padding-left: 30px">
+		<form id="registerForm" name="register-form" action="service.php" method="post"  autocomplete="off" onsubmit="return saveReport(); ">
+			<input type="text" id="registerUserId" name="userId" value="" class="form-control userId" placeholder="请输入注册学号">
 			<br>
 
-			<input type="text" id="registerUserName" name="user_name" value="" class="form-control userName" placeholder="请输入真实姓名"  style="width: 250px; margin: auto;background: url(../logo/name.png) no-repeat 8px 7.5px; padding-left: 30px">
+			<input type="text" id="registerUserName" name="user_name" value="" class="form-control userName" placeholder="请输入真实姓名">
 			<br>
 
-			<div class="passwordHide" style="position: relative;">
-			<i class="fa fa-eye-slash" style="position: absolute; left: 79%; top: 30%; color: #A8A8A8; cursor: pointer;"></i>
-			<input type="password" id="registerPassword" name="password" value="" class="form-control password" placeholder="请输入注册密码" style="width: 250px; margin: auto; background: url(../logo/key.png) no-repeat 8px 7.5px; padding: 0 30px">
+			<div class="password-hide">
+				<i class="fa fa-eye-slash"></i>
+				<input type="password" id="registerPassword" name="password" value="" class="form-control password" placeholder="请输入注册密码">
 			</div>
 
 
 			<br><br>
 			
-			<button type="submit" id="btn-register" class="btn btn-success" style="display:block; width: 250px; margin:auto; font-size: 16px; background-color: rgb(0,104,113); border-color: rgb(0,104,113)">注 册</button>
+			<button type="submit" id="registerBtn" class="btn btn-success">注 册</button>
 
 			<!-- 隐藏input元素用于验证是否提交 -->
 			<input type="hidden" name="action" value="addData" id="action"/>
@@ -105,23 +109,43 @@
 		<!-- 页眉 -->
 		<div class="head-container" style="">
 			<div class="head-item-logo">
-				<img src="../logo/title.png">	
+				<a href="index.html"><img src="../logo/title.png"></a>	
 			</div>
 
-			<div class="head-item-nav nav-left head-item">
-				<ul>
-					<li><a href="#"><i class="fa fa-home" style="font-size: 18px;"></i>&nbsp;首页</a></li>
-					<li><a href="#">活动资讯</a></li>
-					<li><a href="#">经历公示</a></li>
-				</ul>
-			</div>
+			<div id="navLeft" class="head-item-nav">
+	            <ul id="navHide">
+	                <li>
+	                    <a href="../home/index.html">首页</a>
+	                </li>
+	                <li>
+	                    <a href="#">活动资讯</a>
+	                    <ul>
+	                        <li>
+	                            <a href="">公益活动</a>
+	                        </li>
+	                        <li>
+	                            <a href="">社团活动</a>
+	                        </li>
+	                        <li>
+	                            <a href="">学科竞赛</a>
+	                        </li>
+	                        <li>
+	                            <a href="">学术讲座</a>
+	                        </li>
+	                        <li>
+	                            <a href="">社会实践</a>
+	                        </li>
+	                    </ul>                   
+	                </li>
+	            </ul>
+	        </div>
 
 			<div class="head-item-search">
 				<input type="text" name="search" class="form-control" placeholder="搜索活动..." style="">
 
 			</div>	
 
-			<div class="head-item-nav nav-right">	
+			<div id="navRight" class="head-item-nav">	
 				<ul>
 					<li id="popLoginBox" class="btn" style=" ">登陆</li>
 					<li id="popRegisterBox" style="">注册</li>

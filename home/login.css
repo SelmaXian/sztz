@@ -1,0 +1,120 @@
+/*遮罩*/
+#cover {
+	background: #000; 
+	position: absolute; 
+	left: 0px; 
+	top: 0px; 
+	width: 100%; 
+	opacity: .7; 
+	display: none; 
+	z-index: 2 
+}
+
+
+
+/*登录框 + 注册框*/
+#loginWrapper,#registerWrapper {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 350px;
+	height: 405px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 0px 17px 0 rgba(28,31,33,.1) inset;
+			-webkit-transform: translate(-50%,-50%);
+    	-moz-transform: translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    z-index: 3;
+}
+
+#loginHead, #registerHead{
+	padding: 35px 0 20px 50px;
+	font-size: 25px;
+}
+
+/*登陆和注册功能*/
+.login-feature, .register-feature {
+	list-style: none;
+	color: #A8A8A8;
+	border-bottom: 2px solid #C4C4C4;
+	font-size: 18px;
+	padding: 0;
+	box-sizing: border-box;
+	margin-bottom: 35px;
+}
+
+#loginHead ul li,#registerHead ul li {
+	display: inline; /*让登陆和注册并排显示*/
+	float: left;
+    cursor: pointer;
+    width: 125px;
+    height: 35px;
+    text-align: center;
+}
+
+/*当前处在的功能框的标题*/
+.login-active {
+	color: #006871;
+	border-bottom: 2px solid #006871;
+}
+
+
+/*登录注册学号输入框*/
+#loginForm #loginUserId, #registerForm #registerUserId {
+	width: 250px; 
+	margin: auto;
+	background: url(../logo/user.png) no-repeat 8px 7.5px; 
+	padding-left: 30px
+}
+/*注册用户名输入框*/
+#registerForm #registerUserName {
+	width: 250px; 
+	margin: auto;
+	background: url(../logo/name.png) no-repeat 8px 7.5px; 
+	padding-left: 30px
+}
+
+
+
+/*密码显示和隐藏模块*/
+.password-hide {
+	position: relative;
+}
+.password-hide i {
+	position: absolute; 
+	left: 79%; 
+	top: 30%; 
+	color: #A8A8A8; 
+	cursor: pointer;
+}
+.password-hide #loginPassword {
+	width: 250px; 
+	margin: auto; 
+	background: url(../logo/key.png) no-repeat 8px 7.5px; 
+	padding: 0 30px;
+}
+.password-hide #registerPassword {
+	width: 250px; 
+	margin: auto; 
+	background: url(../logo/key.png) no-repeat 8px 7.5px; 
+	padding: 0 30px;
+}
+
+#loginBtn {
+	display:block; 
+	width: 250px; 
+	margin:auto; 
+	font-size: 16px; 
+	background-color: rgb(0,104,113); 
+	border-color: rgb(0,104,113);
+}
+#registerBtn {
+	display:block; 
+	width: 250px; 
+	margin:auto; 
+	font-size: 16px; 
+	background-color: rgb(0,104,113); 
+	border-color: rgb(0,104,113);
+}

@@ -11,8 +11,8 @@ body {
 
 #box {
 	height: 900px;
-
 }
+
 
 header {
 	display: block;
@@ -25,7 +25,7 @@ header {
 	width:100%;
 	min-width: 1075px;	
 	align-items:center;
-	height: 73px;
+	height: 74px;
 	font-size: 16px;
 	box-shadow: 0 2px 14px 0 rgba(28,31,33,.2); 
 }
@@ -45,31 +45,76 @@ header {
 	height: 30px; 
 	background: url(../logo/search.png) no-repeat 95%;
 }
-/*导航*/
-.head-item-nav ul {
-	margin: 0 20px 0 0;
-	list-style: none;
-}
-/*导航1*/
-.head-item-nav ul li {
+
+
+
+/*总栏一整条*/
+.head-item-nav>ul>li {
 	display: inline;
-	width: 100px;
 }
-/*导航1-1功能项*/
-.nav-left ul li {
-	padding: 0 20px;
+/*一级导航栏*/
+#navLeft ul {
+	display: flex;
+	align-items: center;
+	height: 74px;
+	margin: 0;
 }
-/*导航1-2登陆*/
-.nav-right ul li {
-	padding: 0 5px;
+#navLeft{
+	z-index: 111;
+}
+/*一级导航栏功能项*/
+#navLeft ul li {
+	position: relative;
+	padding: 26px 0px;
+	cursor: pointer;
+}
+#navLeft ul li:hover {
+	background: #006871;
+}
+#navLeft>ul>li>a {
+	text-decoration: none;
+	padding: 26px 20px;
+	color: black;
+	height: 64px;
+}
+#navLeft>ul>li:first-child>a {
+	padding: 26px 34px;
+}
+/*隐藏二级菜单*/
+#navLeft ul li ul {
+	display: none;	
+	list-style: none;
+	position: absolute;
+	width: auto;
+	top: 100%;
+	left: 0;
+	min-width: 104px;
+	padding: 0px;
+}
+#navLeft ul li ul li {	
+	width: auto;
+	background: #004e55;
+	padding: 10px 20px;
+}
+#navHide>li>ul>li>a {
+	text-decoration: none;
+	color: white;
+}
+#navLeft>ul>li:hover>a, #navHide>li>ul>li:hover>a {
+	color: white;
+}
+
+
+/*右侧登陆注册按钮*/
+#navRight ul {
+	margin: 0 30px 0 0;
+}
+#navRight ul li:last-child {
+	padding-left: 10px;
 	cursor: pointer; 
 }
 
-.nav-left ul li a {
-	text-decoration: none;
-	color: black;
-}
-/*登录弹框按钮*/
+/*首页登录按钮*/
 #popLoginBox {
 	background: #027e89; 
 	line-height: 20px; 
@@ -77,64 +122,25 @@ header {
 	padding: 6px 17px; 
 	font-size: 15px;
 }
-/*注册弹框按钮*/
+#popLoginBox:hover {
+	background: #FF8D3C;
+}
+/*首页注册按钮*/
 #popRegisterBox {
 	font-size: 15px; 
 	color: #a3a7a7
 }
-
-
-
-
-
-
-
-/*登录框*/
-#login,#register {
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 350px;
-	height: 405px;
-	background: white;
-	border-radius: 10px;
-	box-shadow: 0 0px 17px 0 rgba(28,31,33,.1) inset;
-			-webkit-transform: translate(-50%,-50%);
-    	-moz-transform: translate(-50%,-50%);
-    transform:translate(-50%,-50%);
-    z-index: 3;
-}
-
-#login-head, #register-head{
-	padding: 35px 0 20px 50px;
-	font-size: 25px;
-}
-
-/*登陆和注册功能*/
-.login-feature,.register-feature {
-	list-style: none;
-	color: #A8A8A8;
-	border-bottom: 2px solid #C4C4C4;
-	font-size: 18px;
-	padding: 0;
-	box-sizing: border-box;
-	margin-bottom: 35px;
-}
-
-#login-head ul li,#register-head ul li {
-	display: inline; /*让登陆和注册并排显示*/
-	float: left;
-    cursor: pointer;
-    width: 125px;
-    height: 35px;
-    text-align: center;
-}
-
-.login-active{
+#popRegisterBox:hover {
 	color: #006871;
-	border-bottom: 2px solid #006871;
 }
+
+
+
+
+
+
+
+
 
 
 
